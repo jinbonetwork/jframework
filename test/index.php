@@ -36,39 +36,8 @@ function walk($data){
 	}
 	return implode(PHP_EOL,$markup).PHP_EOL;
 }
-echo walk(array(
-	'teams' => array(
-		'label' => '팀',
-		'data' => array(
-			'act-jinbo-net' => array('label'=>'정보인권','href'=>'http://act.jinbo.net'),
-			'lab-jinbo-net' => array('label'=>'독립네트워크','href'=>'http://lab.jinbo.net'),
-			'support' => array('label'=>'후원하기','href'=>'http://jinbo.net/support'),
-		),
-	),
-	'user-services' => array(
-		'label' => '개인화 서비스',
-		'data' => array(
-			'mycham-jinbo-net' => array('label'=>'내 정보','href'=>'http://mycham.jinbo.net'),
-			'mail-jinbo-net' => array('label'=>'메일','href'=>'http://mail.jinbo.net'),
-			'blog-jinbo-net' => array('label'=>'블로그','href'=>'http://blog.jinbo.net'),
-		),
-	),
-	'issue-makers' => array(
-		'label' => '사회운동지원',
-		'data' => array(
-			'taogi-net' => array('label'=>'따오기','href'=>'http://taogi.net'),
-			'socialfunch-org' => array('label'=>'소셜펀치','href'=>'http://socialfunch.org'),
-			'hosting-jinbo-net' => array('label'=>'호스팅','href'=>'http://hosting.jinbo.net'),
-			'list-jinbo-net' => array('label'=>'메일링리스트','href'=>'http://list.jinbo.net'),
-		),
-	),
-	'others' => array(
-		'label' => '기타',
-		'data' => array(
-			'sitemap' => array('label'=>'전체보기','href'=>'http://jinbo.net/sitemap'),
-		)
-	),
-));
+$data = json_decode(file_get_contents(dirname(__FILE__).'/../data/jgm.json'),true);
+echo walk($data);
 
 ?>
 </div>

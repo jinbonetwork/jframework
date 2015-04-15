@@ -1,0 +1,66 @@
+{
+	"teams": {
+		"label": "팀",
+		"data": {
+			"act-jinbo-net": {
+				"label": "정보인권",
+				"href": "http://act.jinbo.net"
+			},
+			"lab-jinbo-net": {
+				"label": "독립네트워크",
+				"href": "http://lab.jinbo.net"
+			},
+			"support": {
+				"label": "후원하기",
+				"href": "http://jinbo.net/support"
+			}
+		}
+	},
+	"user-services": {
+		"label": "개인화 서비스",
+		"data": {
+			"mycham-jinbo-net": {
+				"label": "내 정보",
+				"href": "http://mycham.jinbo.net"
+			},
+			"mail-jinbo-net": {
+				"label": "메일",
+				"href": "http://mail.jinbo.net"
+			},
+			"blog-jinbo-net": {
+				"label": "블로그",
+				"href": "http://blog.jinbo.net"
+			}
+		}
+	},
+	"issue-makers": {
+		"label": "사회운동지원",
+		"data": {
+			"taogi-net": {
+				"label": "따오기",
+				"href": "http://taogi.net"
+			},
+			"socialfunch-org": {
+				"label": "소셜펀치",
+				"href": "http://socialfunch.org"
+			},
+			"hosting-jinbo-net": {
+				"label": "호스팅",
+				"href": "http://hosting.jinbo.net"
+			},
+			"list-jinbo-net": {
+				"label": "메일링리스트",
+				"href": "http://list.jinbo.net"
+			}
+		}
+	},
+	"others": {
+		"label": "기타",
+		"data": {
+			"sitemap": {
+				"label": "전체보기",
+				"href": "http://jinbo.net/sitemap"
+			}
+		}
+	}
+}
