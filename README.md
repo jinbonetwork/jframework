@@ -16,6 +16,8 @@ jframework
 			* 4.3.0
 		* [webfonts](https://github.com/singihae/Webfonts) -- (CSS) 한글 웹폰트.
 			* 2015.01.14
+		* [less](http://lesscss.org) -- (CSS) 스타일시트 전처리 도구.
+			* 2.5.0
 		* [jquery](http://jquery.com) -- (JS) 자바스크립트 프레임워크.
 			* 2.1.3
 	* svgs -- 자체 웹폰트 제작에 사용한 svg 파일들.
