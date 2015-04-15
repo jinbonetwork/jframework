@@ -1,0 +1,31 @@
+@sans-serif: '맑은 고딕', 'Malgun Gothic', Helbetica, sans-serif;
+
+body {
+	font-family: @sans-serif;
+}
+
+#jgm {
+	.jgm-group {
+		h3.jgm-group-title {
+		}
+		ul.jgm-group-items {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			li.jgm-group-item {
+				margin: 0;
+				padding: 0;
+				a {
+					span {
+						&:before {
+							content: '\F0AC';
+							display: inline;
+							margin-right: 0.2em;
+							font-family: 'FontAwesome';
+						}
+					}
+				}
+			}
+		}
+	}
+}
