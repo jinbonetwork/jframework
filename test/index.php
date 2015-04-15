@@ -2,10 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../contrib/normalize.css/3.0.3/normalize.css">
-	<link rel="stylesheet" type="text/css" href="../contrib/bootstrap/3.3.4/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="../contrib/font-awesome/4.3.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="../contrib/webfonts/2015.01.14/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/contrib.css">
 	<link rel="stylesheet/less" type="text/css" href="./index.less">
 	<script src="../contrib/less.js/2.5.0/dist/less.min.js"></script>
 	<script src="../contrib/jquery/2.1.3/jquery.min.js"></script>

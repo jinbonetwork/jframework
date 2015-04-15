@@ -1,0 +1,1 @@
+lessc -ru less/contrib.less > css/contrib.css
