@@ -1,2 +1,2 @@
-lessc -ru less/contrib.less > css/contrib.css
+lessc -ru less/resources.less > css/resources.css
 lessc -ru less/style.less > css/style.css

@@ -1,6 +1,3 @@
-/******************************************************************************
-	normalize.css
-******************************************************************************/
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Set default font family to sans-serif.
@@ -356,9 +353,6 @@ td,
 th {
   padding: 0;
 }
-/******************************************************************************
-	bootstrap -- partial import (copied from bootstrap.less)
-******************************************************************************/
 .container {
   margin-right: auto;
   margin-left: auto;
@@ -1026,9 +1020,6 @@ th {
     margin-left: 0%;
   }
 }
-/******************************************************************************
-	font-awesome
-******************************************************************************/
 /*!
  *  Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -2825,9 +2816,6 @@ th {
 .fa-medium:before {
   content: "\f23a";
 }
-/******************************************************************************
-	webfonts
-******************************************************************************/
 @font-face {
   font-family: 'NanumBarunGothic';
   font-weight: normal;
@@ -2855,4 +2843,11 @@ th {
   font-style: normal;
   src: url('https://github.com/singihae/Webfonts/blob/master/BM-HANNA.eot');
   src: url('https://github.com/singihae/Webfonts/blob/master/BM-HANNA.eot?#iefix') format('embedded-opentype'), url('https://github.com/singihae/Webfonts/blob/master/BM-HANNA.woff') format('woff'), url('https://github.com/singihae/Webfonts/blob/master/BM-HANNA.svg#BM-HANNA') format('svg'), url('https://github.com/singihae/Webfonts/blob/master/BM-HANNA.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'jicons';
+  font-weight: normal;
+  font-style: normal;
+  src: url('../fonts/jicons.eot');
+  src: url('../fonts/jicons.eot?#iefix') format('embedded-opentype'), url('../fonts/jicons.woff') format('woff'), url('../fonts/jicons.svg#jicons') format('svg'), url('../fonts/jicons.ttf') format('truetype');
 }
