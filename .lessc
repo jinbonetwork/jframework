@@ -1,2 +1,4 @@
+lessc -ru less/jquery-ui.less > css/jquery-ui.css
+lessc -ru less/is-loading.less > css/is-loading.css
 lessc -ru less/resources.less > css/resources.css
 lessc -ru less/style.less > css/style.css
