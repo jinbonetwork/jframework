@@ -1,13 +1,14 @@
-<!DOCTYPE html>
+<?php
+	$resources = json_decode(file_get_contents(dirname(__FILE__).'/../data/resources.map.json'),true);
+?><!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../<?php echo $resources['jframework']['css'][0]; ?>">
 	<link rel="stylesheet/less" type="text/css" href="../test/style.less">
-	<script src="../contrib/less.js/2.5.0/dist/less.min.js"></script>
-	<script src="../contrib/jquery/2.1.3/jquery.min.js"></script>
-	<script src="../contrib/bootstrap/3.3.4/dist/js/bootstrap.min.js"></script>
-	<script src="../js/script.js"></script>
+	<script src="../<?php echo $resources['less.js']['js'][0]; ?>"></script>
+	<script src="../<?php echo $resources['jquery']['js'][0]; ?>"></script>
+	<script src="../<?php echo $resources['jframework']['js'][0]; ?>"></script>
 </head>
 <body>
 
@@ -40,9 +41,19 @@ $data = json_decode(file_get_contents(dirname(__FILE__).'/../data/jgm.json'),tru
 echo walk($data);
 
 ?>
+
 </div>
+
 </div>
 </nav>
+
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<pre><?php print_r($resources); ?></pre>
+</div>
+</div>
+</div>
 
 </body>
 </html>

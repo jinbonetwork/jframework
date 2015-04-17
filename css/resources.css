@@ -2851,3 +2851,8 @@ th {
   src: url('../fonts/jicons.eot');
   src: url('../fonts/jicons.eot?#iefix') format('embedded-opentype'), url('../fonts/jicons.woff') format('woff'), url('../fonts/jicons.svg#jicons') format('svg'), url('../fonts/jicons.ttf') format('truetype');
 }
+.container .row:after {
+  content: '';
+  display: block;
+  clear: both;
+}
