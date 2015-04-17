@@ -2851,6 +2851,26 @@ th {
   src: url('../fonts/jicons.eot');
   src: url('../fonts/jicons.eot?#iefix') format('embedded-opentype'), url('../fonts/jicons.woff') format('woff'), url('../fonts/jicons.svg#jicons') format('svg'), url('../fonts/jicons.ttf') format('truetype');
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+pre,
+fieldset,
+legend,
+form {
+  margin: 0;
+  padding: 0;
+}
 body {
   color: #000000;
 }
