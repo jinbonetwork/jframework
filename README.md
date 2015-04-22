@@ -48,6 +48,7 @@ jframework
 * 사용
 	* jQuery(_선택자_).regHeight(_user config_);
 	* 예
+	```{.javascript}
     jQuery(document).ready(function(){
 		resize();
     });
@@ -58,6 +59,7 @@ jframework
 		jQuery('div[data-height-mode]').regHeight();
 		setTimeout(function(){ jQuery('div[data-height-mode]').regHeight(); }, 20);
     }
+	```
 * 어트리뷰트
 	* data-height-mode: 높이 조정의 모드를 결정한다.
 		* 섹션(최상위 그룹)에서 사용한다. 하위의 모든 컬럼이 영향을 받는다.
