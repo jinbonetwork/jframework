@@ -43,11 +43,12 @@ jframework
 * data -- 마크업 컴포넌트에서 사용할 json 파일.
 * test -- 개발용 샘플 모음.
 
-jquery.regHeight-1.0.js의 사용
+높이 조정 스크립트(jquery.regHeight-1.0.js)의 사용
 ------------------------------
 * 사용
 	* jQuery(_선택자_).regHeight(_user config_);
 	* 예
+		~~~~
 		jQuery(document).ready(function(){
 			resize();
 		});
@@ -58,6 +59,7 @@ jquery.regHeight-1.0.js의 사용
 			jQuery('div[data-height-mode]').regHeight();
 			setTimeout(function(){ jQuery('div[data-height-mode]').regHeight(); }, 20);
 		}
+		~~~~
 * 어트리뷰트
 	* data-height-mode: 높이 조정의 모드를 결정한다.
 		* 섹션(최상위 그룹)에서 사용한다. 하위의 모든 컬럼이 영향을 받는다.
@@ -72,7 +74,7 @@ jquery.regHeight-1.0.js의 사용
 	* data-height-_브레이크 포인트_: 브레이크 포인트에 따른 높이의 비 혹은 배수를 결정한다.
 		* 최하위 컬럼(타일)에서 사용한다.
 		* _브레이트 포인트_: xs, sm, md, lg
-		* 값: _숫자 _
+		* 값: _숫자_
 			* 정수(자연수)와 소수를 모두 사용할 수 있으며, 나누기 기호도 사용할 수 있다.
 			* 'nounit' 모드의 경우에는 이 값이 해당 타일의 폭에 대한 해당 타일의 높이의 비를 나타내는 값이 된다.
 			* 'nounit' 모드가 아닌 경우에는, 단위 높이에 이 값을 곱한 값을 해당 타일의 높이로 한다.
