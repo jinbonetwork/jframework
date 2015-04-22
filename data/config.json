@@ -1,0 +1,12 @@
+{
+	"grid_columns":12,
+	"screen_xs_min":480,
+	"screen_sm_min":768,
+	"screen_md_min":992,
+	"screen_lg_min":1200,
+
+	"color":"#000000",
+	"link":"#4183c4",
+
+	"jframework":true
+}
