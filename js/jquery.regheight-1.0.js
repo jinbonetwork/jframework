@@ -8,11 +8,9 @@
 		this.each(function(){
 			var cols = jQuery(this).find('div[class^="col-"]');
 
-			if(breakPoint == 'de'){ //창크기가 xs보다도 작으면 높이 규제를 하지 않는다.
-				for(var i = 0; i < cols.length; i++)
-					jQuery(cols[i]).height('');
-				return;
-			}
+			for(var i = 0; i < cols.length; i++) jQuery(cols[i]).height(''); //높이값을 초기화.
+
+			if(breakPoint == 'de') return; //브레이크 포인트가 xs보다 작으면 높이를 규제하지 않는다.
 
 			var mode = jQuery(this).attr('data-height-mode');
 			if(mode == 'nounit'){
@@ -26,7 +24,6 @@
 						jQuery(cols[i]).height(ws[i] * rh);
 					}
 				}
-
 			} else {
 				var uh = getUnitHeight(mode, jQuery(this)[0].getBoundingClientRect().width);
 				for(var i = 0; i < cols.length; i++){
