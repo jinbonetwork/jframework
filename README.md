@@ -49,16 +49,15 @@ jframework
 	* jQuery(_선택자_).regHeight(_user config_);
 	* 예
 	```{.javascript}
-    jQuery(document).ready(function(){
-		resize();
-    });
-    jQuery(window).resize(function(){
-		resize();
-    });
-    function resize(){
-		jQuery('div[data-height-mode]').regHeight();
-		setTimeout(function(){ jQuery('div[data-height-mode]').regHeight(); }, 20);
-    }
+		jQuery(document).ready(function(){
+			resize();
+		});
+		jQuery(window).resize(function(){
+			resize();
+		});
+		function resize(){
+			jQuery('div[data-height-mode]').regHeight();
+		}
 	```
 * 어트리뷰트
 	* data-height-mode: 높이 조정의 모드를 결정한다.
