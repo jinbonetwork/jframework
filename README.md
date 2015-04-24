@@ -81,4 +81,19 @@ jframework
 			* data-height-sm="2"
 			* data-height-xs="0.5"
 			* data-height-lg="1/2"
-
+	* 예
+		```{.html}
+		<div class="row" data-height-mode="nounit">
+			<div class="col-xs-12 col-md-3 color1" data-height-xs="1/6" data-height-md="2"></div>
+			<div class="col-xs-12 col-md-6">
+				<div class="row">
+					<div class="col-xs-12 color2" data-height-xs="1/6" data-height-md="1/2"></div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 color3" data-height-xs="1/6" data-height-sm="1/2" data-height-md="1"></div>
+					<div class="col-xs-12 col-sm-6 color4" data-height-xs="1/6" data-height-sm="1/2" data-height-md="1"></div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-3 color5" data-height-xs="1/6" data-height-md="2"></div>
+		</div>
+		```
