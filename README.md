@@ -82,7 +82,7 @@ jframework
 			* data-height-xs="0.5"
 			* data-height-lg="1/2"
 	* 예
-		```{.html}
+	```{.html}
 		<div class="row" data-height-mode="nounit">
 			<div class="col-xs-12 col-md-3 color1" data-height-xs="1/6" data-height-md="2"></div>
 			<div class="col-xs-12 col-md-6">
@@ -96,4 +96,4 @@ jframework
 			</div>
 			<div class="col-xs-12 col-md-3 color5" data-height-xs="1/6" data-height-md="2"></div>
 		</div>
-		```
+	```
