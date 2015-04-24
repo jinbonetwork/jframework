@@ -47,6 +47,17 @@ jframework
 ------------------------------
 * 사용
 	* jQuery(_선택자_).regHeight(_user config_);
+	* _user config_: config는 data/config.json에서 가져오지만, 사용자 config를 설정할 수 있다.
+		* 예
+		```{.javascript}
+			jQuery('selector').regHeight({
+				"grid_columns": 12,
+				"screen_xs_min": 480,
+				"screen_sm_min": 768,
+				"screen_md_min": 992,
+				"screen_lg_min": 1200 
+			});
+		```
 	* 예
 	```{.javascript}
 		jQuery(document).ready(function(){
