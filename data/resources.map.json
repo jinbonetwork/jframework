@@ -12,7 +12,10 @@
 		"deps":[]
 	},
 	"mobile-detect.js":{
-		"js":["contrib/mobile-detect.js/1.0.0/mobile-detect-modernizr.js"],
+		"js":[
+			"contrib/mobile-detect.js/1.0.0/mobile-detect.min.js",
+			"contrib/mobile-detect.js/1.0.0/mobile-detect-modernizr.js"
+		],
 		"css":[],
 		"priority":"-999999999",
 		"deps":["modernizr"]
