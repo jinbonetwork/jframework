@@ -17,7 +17,8 @@ jframework
 		* [mobile-detect.js](http://hgoebl.github.io/mobile-detect.js/) -- 모바일 브라우저 검사 라이브러리.
 			* 1.0.0
 		* [jquery](http://jquery.com) -- (JS) 자바스크립트 프레임워크.
-			* 2.1.3
+			* 2.1.3 -- data/resources.map.json
+			* 1.11.2 -- data/resources.map.fallback.json
 		* [fancybox](http://fancyapps.com) -- (JS, CSS) 전체화면 오버레이 기능을 제공하는 jQuery 플러그인.
 			* 2.1.5
 		* [imagesloaded]() -- (JS) 이미지가 실제로 로드됐을 때 사용자 함수를 실행하는 jQuery 플러그인.

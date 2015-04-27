@@ -9,9 +9,34 @@
 	<link rel="stylesheet/less" type="text/css" href="../test/style.less">
 	<script src="../<?php echo $resources['less.js']['js'][0]; ?>"></script>
 	<script src="../<?php echo $resources['jquery']['js'][0]; ?>"></script>
+	<script src="../<?php echo $resources['is-loading']['js'][0]; ?>"></script>
 	<script src="../<?php echo $resources['jframework']['js'][0]; ?>"></script>
+	<script>
+		jQuery(document).ready(function(e){
+			jQuery('.is-loading-button').on('click',function(e){
+				var $trigger = jQuery(this).prop('disabled','disabled');
+				var $console = jQuery($trigger.attr('data-console')) || $trigger.closest('.is-loading-container').find('.is-loading-console');
+				var $timer = parseInt($trigger.attr('data-timer')) || 1000;
+				$trigger.isLoading({
+					class: "fa fa-spin fa-refresh"
+				});
+				$console.removeClass('alert-success');
+				setTimeout(function(){
+					$trigger.isLoading('hide').prop('disabled','');
+					$console.html($trigger.attr('data-complete-label')).addClass('alert-success');
+				},$timer);
+			});
+		});
+	</script>
 </head>
 <body>
+
+<div class="container">
+	<div class="is-loading-container">
+		<div class="is-loading-console">Ready to load...</div>
+		<button class="is-loading-button" data-complete-label="Content loaded.">test</button>
+	</div>
+</div>
 
 <nav id="jgm">
 <div class="container">

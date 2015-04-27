@@ -1,0 +1,8 @@
+{
+	"jquery":{
+		"js":["contrib/jquery/1.11.2/jquery-1.11.2.min.js"],
+		"css":[],
+		"priority":"-999999999",
+		"deps"
+	}
+}
