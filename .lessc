@@ -1,1 +1,1 @@
-lessc -ru less/style.less > css/style.css
+lessc less/style.less > css/style.css
