@@ -8,10 +8,14 @@ jframework
 
 * contrib -- 외부에서 가져온 리소스들. 서브모듈로 추가하는 대신 버전을 특정해서 사용합니다.
 	* 단순 저장
-		* [less.js](http://lesscss.org) -- (JS) 개발 환경에서 사용할 프론트엔드 CSS 전처리 도구.
-			* 2.5.0
 		* [lessphp](http://leafo.net/lessphp/) -- (PHP) 개발 환경에서 사용할 백엔드 CSS 전처리 도구.
 			* 0.4.0
+		* [less.js](http://lesscss.org) -- (JS) 개발 환경에서 사용할 프론트엔드 CSS 전처리 도구.
+			* 2.5.0
+		* [modernizr](http://modernizr.com) -- (JS) HTML5/CSS3 호환성 검사 라이브러리.
+			* 2.8.3
+		* [mobile-detect.js](http://hgoebl.github.io/mobile-detect.js/) -- 모바일 브라우저 검사 라이브러리.
+			* 1.0.0
 		* [jquery](http://jquery.com) -- (JS) 자바스크립트 프레임워크.
 			* 2.1.3
 		* [fancybox](http://fancyapps.com) -- (JS, CSS) 전체화면 오버레이 기능을 제공하는 jQuery 플러그인.
