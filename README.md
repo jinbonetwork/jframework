@@ -47,18 +47,28 @@ jframework
 ------------------------------
 * 사용
 	* jQuery(_선택자_).regHeight(_user config_);
+	* _user config_: config는 data/config.json에서 가져오지만, 사용자 config를 설정할 수 있다.
+		* 예
+		```{.javascript}
+			jQuery('selector').regHeight({
+				"grid_columns": 12,
+				"screen_xs_min": 480,
+				"screen_sm_min": 768,
+				"screen_md_min": 992,
+				"screen_lg_min": 1200 
+			});
+		```
 	* 예
 	```{.javascript}
-    jQuery(document).ready(function(){
-		resize();
-    });
-    jQuery(window).resize(function(){
-		resize();
-    });
-    function resize(){
-		jQuery('div[data-height-mode]').regHeight();
-		setTimeout(function(){ jQuery('div[data-height-mode]').regHeight(); }, 20);
-    }
+		jQuery(document).ready(function(){
+			resize();
+		});
+		jQuery(window).resize(function(){
+			resize();
+		});
+		function resize(){
+			jQuery('div[data-height-mode]').regHeight();
+		}
 	```
 * 어트리뷰트
 	* data-height-mode: 높이 조정의 모드를 결정한다.
@@ -82,4 +92,19 @@ jframework
 			* data-height-sm="2"
 			* data-height-xs="0.5"
 			* data-height-lg="1/2"
-
+	* 예
+	```{.html}
+		<div class="row" data-height-mode="nounit">
+			<div class="col-xs-12 col-md-3" data-height-xs="1/6" data-height-md="2"></div>
+			<div class="col-xs-12 col-md-6">
+				<div class="row">
+					<div class="col-xs-12" data-height-xs="1/6" data-height-md="1/2"></div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-sm-6" data-height-xs="1/6" data-height-sm="1/2" data-height-md="1"></div>
+					<div class="col-xs-12 col-sm-6" data-height-xs="1/6" data-height-sm="1/2" data-height-md="1"></div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-3" data-height-xs="1/6" data-height-md="2"></div>
+		</div>
+	```

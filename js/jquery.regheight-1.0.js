@@ -2,18 +2,22 @@
 	var config;
 
 	$.fn.regHeight = function(userConfig){
+		//모든 컬럼의 높이값을 초기화.////
+		this.each(function(){
+			jQuery(this).find('div[class^="col-"]').each(function(){
+				jQuery(this).height('');
+			});
+		});
+
 		if(typeof(config) === 'undefined') config = getConfig(userConfig); 
 		var breakPoint = getBreakPoint();
+		
+		 //브레이크 포인트가 xs보다 작으면 높이를 규제하지 않는다.////
+		if(breakPoint == 'de') return;
 
+		//컬럼의 높이를 규제한다. ////
 		this.each(function(){
 			var cols = jQuery(this).find('div[class^="col-"]');
-
-			if(breakPoint == 'de'){ //창크기가 xs보다도 작으면 높이 규제를 하지 않는다.
-				for(var i = 0; i < cols.length; i++)
-					jQuery(cols[i]).height('');
-				return;
-			}
-
 			var mode = jQuery(this).attr('data-height-mode');
 			if(mode == 'nounit'){
 				var ws = [];
@@ -23,20 +27,47 @@
 				for(var i = 0; i < cols.length; i++){
 					var rh = getHeight(cols[i], breakPoint);
 					if(rh != false) {//data-height-*가 없는 컬럼(그룹)은 높이 규제를 하지 않는다.
-						jQuery(cols[i]).height(ws[i] * rh);
+						jQuery(cols[i]).height(Math.ceil(ws[i] * rh));
 					}
 				}
-
 			} else {
 				var uh = getUnitHeight(mode, jQuery(this)[0].getBoundingClientRect().width);
 				for(var i = 0; i < cols.length; i++){
 					var nh = getHeight(cols[i], breakPoint);
 					if(nh != false) { //data-height-*가 없는 컬럼(그룹)은 높이 규제를 하지 않는다.
-						jQuery(cols[i]).height(uh * nh);
+						jQuery(cols[i]).height(Math.ceil(uh * nh));
 					}
 				}
 			}
-		});
+			
+			//셀의 아귀 맞추기 ////
+			//각 컴럼의 높이값을 ceiling으로 처리했기 때문에, 부모 컬럼은 인접한 컬럼 보다 항상 크다.
+			//따라서 자식 컬럼이 부모 컬럼을 n등분으로 나눌 때, 부모 컬럼의 높이(ph)는 인접한 컬럼의 높이(np)보다 최대 n-1만큼 크다.
+			//여기서는 등분의 수를 최대 5라고 예상하고, ph와 np의 차가 4이하일 때를 '같은 높이를 가져야 컬럼'으로 취급한다.
+			//'같은 높이를 가져야 하는 컬럼'의 조건에는 top의 위치가 같아야 한다는 조건이 추가 되어야 한다.
+			var diff = 4; //같은 높이를 가져야 하는 컬럼들 사이의 높이의 최대 차이.
+			for(var i = 0; i < cols.length; i++){
+				var t = jQuery(cols[i]).offset().top;
+				var maxh = jQuery(cols[i]).height();
+				for(var j = i+1; j < cols.length; j++){
+					if(t == jQuery(cols[j]).offset().top){
+						var nh = jQuery(cols[j]).height();
+						if(maxh < nh && nh - maxh <= diff){
+							maxh = nh;
+						}
+					}
+				}//for(j)
+				for(var j = i; j < cols.length; j++){
+					if(t == jQuery(cols[j]).offset().top){
+						var h = jQuery(cols[j]).height();
+						if(h <= maxh && maxh - h <= diff){
+							 jQuery(cols[j]).height(maxh);
+							 cols.splice(j, 1); j--;
+						}
+					}
+				}//for(j)
+			}//for(i)
+		});//this.each
 	}
 		
 	function getConfig(userConfig){
