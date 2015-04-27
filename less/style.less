@@ -1,4 +1,45 @@
-@import (less) "resources";
-@import (less) "_html";
-@import (less) "_typo";
-@import (less) "_forms";
+//-----------------------------------------------------------------------------
+//	normalize.css
+//-----------------------------------------------------------------------------
+@import "../contrib/normalize.css/3.0.3/normalize.css";
+
+//-----------------------------------------------------------------------------
+//	bootstrap -- partial import (copied from bootstrap.less)
+//-----------------------------------------------------------------------------
+// override by jinbonet
+@import "./_config";
+// bootstrap
+@import "../contrib/bootstrap/3.3.4/less/bootstrap";
+/*
+@import "../contrib/bootstrap/3.3.4/less/variables";
+@import "../contrib/bootstrap/3.3.4/less/mixins";
+@import "../contrib/bootstrap/3.3.4/less/scaffolding";
+@import "../contrib/bootstrap/3.3.4/less/grid";
+*/
+
+//-----------------------------------------------------------------------------
+//	font-awesome
+//-----------------------------------------------------------------------------
+@import "../contrib/font-awesome/4.3.0/css/font-awesome.min.css";
+
+//-----------------------------------------------------------------------------
+//	webfonts
+//-----------------------------------------------------------------------------
+@import "../contrib/webfonts/2015.01.14/style.css";
+
+//-----------------------------------------------------------------------------
+//	Jframework
+//-----------------------------------------------------------------------------
+/// variables
+@color: #000000;
+@link: #4183C4;
+
+/// override
+@import "./_jquery-ui";
+@import "./_is-loading";
+
+/// components
+@import "./_icons";
+@import "./_html";
+@import "./_typo";
+@import "./_forms";
