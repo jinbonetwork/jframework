@@ -2,8 +2,20 @@
 	"less.js":{
 		"js":["contrib/less.js/2.5.0/dist/less.min.js"],
 		"css":[],
-		"priority":"0",
+		"priority":"-999999999",
 		"deps":[]
+	},
+	"modernizr":{
+		"js":["contrib/modernizr/2.8.3/modernizr.custom.js"],
+		"css":[],
+		"priority":"-999999999",
+		"deps":[]
+	},
+	"mobile-detect.js":{
+		"js":["contrib/mobile-detect.js/1.0.0/mobile-detect-modernizr.js"],
+		"css":[],
+		"priority":"-999999999",
+		"deps":["modernizr"]
 	},
 	"jquery":{
 		"js":["contrib/jquery/2.1.3/jquery.min.js"],
