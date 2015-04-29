@@ -28,7 +28,7 @@
 				var $timer = parseInt($trigger.attr('data-timer')) || 1000;
 
 				$target.jfLoading({position:$position});
-				$console.removeClass('alert-success');
+				$console.removeClass('alert-success').addClass('alert-info');
 				setTimeout(function(){
 					$target.isLoading('hide');
 					$trigger.prop('disabled','');
@@ -40,56 +40,55 @@
 </head>
 <body>
 <div class="container">
-<div class="row">
-<form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputFile">File input</label>
-    <input type="file" id="exampleInputFile">
-    <p class="help-block">Example block-level help text here.</p>
-  </div>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"> Check me out
-    </label>
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
-<hr>
-<div class="container">
-	<div class="is-loading-container">
-		<div class="alert alert-info is-loading-console">Ready to load...</div>
-		<button class="btn is-loading-button" data-is-loading-position="inside" data-complete-label="Content loaded.">Test</button>
+	<h1>jFramework Test</h1>
+	<hr>
+	<div class="row">
+		<form class="col-md-6" style="box-sizing: border-box;padding-right: 20px;">
+			<h2>Forms & Buttons</h2>
+			<div class="form-group">
+				<label for="exampleInputEmail1">Email address</label>
+				<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1">Password</label>
+				<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+			</div>
+			<div class="form-group">
+				<label for="exampleInputFile">File input</label>
+				<input type="file" id="exampleInputFile">
+				<p class="help-block">Example block-level help text here.</p>
+			</div>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox"> Check me out
+				</label>
+			</div>
+			<button type="submit" class="btn btn-default">Submit</button>
+		</form>
+		<div class="col-md-6">
+			<div class="row">
+				<h2>jfLoading() & Alerts</h2>
+				<div class="is-loading-container">
+					<div class="alert alert-info is-loading-console">Ready to load...</div>
+					<button class="btn is-loading-button" data-is-loading-position="inside" data-complete-label="Content loaded.">position: inside</button>
+				</div>
+				<div class="is-loading-container">
+					<div class="alert alert-info is-loading-console">Ready to load...</div>
+					<button class="btn is-loading-button" data-is-loading-position="right" data-complete-label="Content loaded.">position: right (default)</button>
+				</div>
+				<div class="is-loading-container">
+					<div class="alert alert-info is-loading-console">Ready to load...</div>
+					<button class="btn is-loading-button" data-is-loading-position="overlay" data-complete-label="Content loaded.">position: overlay</button>
+				</div>
+			</div>
+		</div>
 	</div>
-</div>
-<hr>
-<div class="container">
-	<div class="is-loading-container">
-		<div class="alert alert-info is-loading-console">Ready to load...</div>
-		<button class="btn is-loading-button" data-is-loading-position="right" data-complete-label="Content loaded.">Test</button>
-	</div>
-</div>
-<hr>
-<div class="container">
-	<div class="is-loading-container">
-		<div class="alert alert-info is-loading-console">Ready to load...</div>
-		<button class="btn is-loading-button" data-is-loading-position="overlay" data-complete-label="Content loaded.">Test</button>
-	</div>
-</div>
+	<hr>
 
-</div>
-</div>
-
-<nav id="jgm">
-<div class="container">
-<div class="row">
+	<nav id="jgm">
+		<div class="container">
+			<h2>Global Menu</h2>
+			<div class="row">
 <?php
 
 function walk($data){
@@ -117,18 +116,9 @@ echo walk($data);
 
 ?>
 
+			</div>
+		</div>
+	</nav>
 </div>
-
-</div>
-</nav>
-
-<div class="container">
-<div class="row">
-<div class="col-md-12">
-<pre><code><?php print_r($resources); ?></code></pre>
-</div>
-</div>
-</div>
-
 </body>
 </html>
