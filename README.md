@@ -16,6 +16,8 @@ jframework
 			* 2.8.3
 		* [mobile-detect.js](http://hgoebl.github.io/mobile-detect.js/) -- 모바일 브라우저 검사 라이브러리.
 			* 1.0.0
+		* [respond](https://github.com/scottjehl/Respond) -- IE8에서 반응형 처리를 보조하기 위한 fallback 라이브러리.
+			* 1.4.2
 		* [jquery](http://jquery.com) -- (JS) 자바스크립트 프레임워크.
 			* 2.1.3 -- data/resources.map.json
 			* 1.11.2 -- data/resources.map.fallback.json
@@ -27,9 +29,12 @@ jframework
 		* [jquery-ui](http://jqueryui.com) -- (JS, CSS) 몇 가지 사용자 인터페이스 세트를 제공하는 jQuery 플러그인.
 			* 1.11.4
 			* less/jquery-ui.less > css/jquery-ui.css
-		* [is-loading]() -- (JS) '로딩 중' 표시 기능을 제공하는 jQuery 플러그인.
+		* [is-loading](http://hekigan.github.io/is-loading/) -- (JS) '로딩 중' 표시 기능을 제공하는 jQuery 플러그인.
 			* 1.0.6
 			* less/is-loading.less > css/is-loading.css
+			* `.isLoading()` 대신 js/is-loading.js에 새로 정의한 `.jfLoading()` 메서드를 사용할 것.
+		* [loaders.css](http://connoratherton.com/loaders) -- (CSS) '로딩 중' 표시에 사용할 CSS 애니메이션 스타일.
+			* 0.1.1
 	* 기본 소스에 포함	
 		* [normalize](https://github.com/necolas/normalize.css) -- (CSS) 초기화 코드.
 			* 3.0.3

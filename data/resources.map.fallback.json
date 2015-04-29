@@ -1,8 +1,17 @@
 {
-	"jquery":{
-		"js":["contrib/jquery/1.11.2/jquery-1.11.2.min.js"],
-		"css":[],
+	"jframework-fallback":{
+		"js":["js/fallback.js"],
+		"css":["css/fallback.css"],
 		"priority":"-999999999",
-		"deps":[]
+		"deps":[
+			"respond",
+			"jquery"
+		]
+	},
+	"jframework":{
+		"js":["js/script.js"],
+		"css":["css/style.css"],
+		"priority":"-999999999",
+		"deps":["jframework-fallback"]
 	}
 }

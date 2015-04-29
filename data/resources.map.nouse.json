@@ -1,0 +1,24 @@
+{
+	"jquery-ui":{
+		"js":["contrib/jquery-ui/1.11.4/jquery-ui.min.js"],
+		"css":["contrib/jquery-ui/1.11.4/jquery-ui.min.css"],
+		"priority":"-999999999",
+		"deps":["jquery"]
+	},
+	"fancybox":{
+		"js":[
+			"contrib/fancybox/2.1.5/lib/jquery.mousewheel-3.0.6.pack.js",
+			"contrib/fancybox/2.1.5/source/jquery.fancybox.pack.js?v=2.1.5",
+			"contrib/fancybox/2.1.5/source/helpers/jquery.fancybox-buttons.js?v=1.0.5",
+			"contrib/fancybox/2.1.5/source/helpers/jquery.fancybox-media.js?v=1.0.6",
+			"contrib/fancybox/2.1.5/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"
+		],
+		"css":[
+			"contrib/fancybox/2.1.5/source/jquery.fancybox.css?v=2.1.5",
+			"contrib/fancybox/2.1.5/source/helpers/jquery.fancybox-buttons.css?v=1.0.5",
+			"contrib/fancybox/2.1.5/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7"
+		],
+		"priority":"-999999999",
+		"deps":["jquery"]
+	}
+}

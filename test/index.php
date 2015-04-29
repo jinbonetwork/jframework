@@ -1,41 +1,90 @@
-<?php
-	global $resources;
-	$resources = json_decode(file_get_contents(dirname(__FILE__).'/../data/resources.map.json'),true);
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
+<?php
+	require_once dirname(__FILE__).'/../jframework.php';
+	$resources = jf_getResourceMap();
+?>
+	<link rel="stylesheet" type="text/css" href="../<?php echo $resources['loaders.css']['css'][0]; ?>">
+	<link rel="stylesheet" type="text/css" href="../<?php echo $resources['is-loading']['css'][0]; ?>">
 	<link rel="stylesheet" type="text/css" href="../<?php echo $resources['jframework']['css'][0]; ?>">
-	<link rel="stylesheet/less" type="text/css" href="../test/style.less">
+
 	<script src="../<?php echo $resources['less.js']['js'][0]; ?>"></script>
 	<script src="../<?php echo $resources['jquery']['js'][0]; ?>"></script>
+	<script src="../<?php echo $resources['loaders.css']['js'][0]; ?>"></script>
 	<script src="../<?php echo $resources['is-loading']['js'][0]; ?>"></script>
+	<script src="../<?php echo $resources['is-loading']['js'][1]; ?>"></script>
 	<script src="../<?php echo $resources['jframework']['js'][0]; ?>"></script>
+
+	<link rel="stylesheet/less" type="text/css" href="../test/style.less">
 	<script>
 		jQuery(document).ready(function(e){
 			jQuery('.is-loading-button').on('click',function(e){
 				var $trigger = jQuery(this).prop('disabled','disabled');
-				var $console = jQuery($trigger.attr('data-console')) || $trigger.closest('.is-loading-container').find('.is-loading-console');
+				var $console = (typeof $trigger.attr('data-console')=='string'&&$trigger.attr('data-console')!='')?jQuery($trigger.attr('data-console')):$trigger.closest('.is-loading-container').find('.is-loading-console');
+				var $position = typeof $trigger.attr('data-is-loading-position')!='undefined'?$trigger.attr('data-is-loading-position'):'right';
+				var $target = $position=='inside'?$console:($position=='overlay'?jQuery('body'):$trigger);
 				var $timer = parseInt($trigger.attr('data-timer')) || 1000;
-				$trigger.isLoading({
-					class: "fa fa-spin fa-refresh"
-				});
+
+				$target.jfLoading({position:$position});
 				$console.removeClass('alert-success');
 				setTimeout(function(){
-					$trigger.isLoading('hide').prop('disabled','');
-					$console.html($trigger.attr('data-complete-label')).addClass('alert-success');
+					$target.isLoading('hide');
+					$trigger.prop('disabled','');
+					$console.removeClass('alert-info').addClass('alert-success').html($trigger.attr('data-complete-label')).addClass('alert-success');
 				},$timer);
 			});
 		});
 	</script>
 </head>
 <body>
-
+<div class="container">
+<div class="row">
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">File input</label>
+    <input type="file" id="exampleInputFile">
+    <p class="help-block">Example block-level help text here.</p>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> Check me out
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+<hr>
 <div class="container">
 	<div class="is-loading-container">
-		<div class="is-loading-console">Ready to load...</div>
-		<button class="is-loading-button" data-complete-label="Content loaded.">test</button>
+		<div class="alert alert-info is-loading-console">Ready to load...</div>
+		<button class="btn is-loading-button" data-is-loading-position="inside" data-complete-label="Content loaded.">Test</button>
 	</div>
+</div>
+<hr>
+<div class="container">
+	<div class="is-loading-container">
+		<div class="alert alert-info is-loading-console">Ready to load...</div>
+		<button class="btn is-loading-button" data-is-loading-position="right" data-complete-label="Content loaded.">Test</button>
+	</div>
+</div>
+<hr>
+<div class="container">
+	<div class="is-loading-container">
+		<div class="alert alert-info is-loading-console">Ready to load...</div>
+		<button class="btn is-loading-button" data-is-loading-position="overlay" data-complete-label="Content loaded.">Test</button>
+	</div>
+</div>
+
+</div>
 </div>
 
 <nav id="jgm">
@@ -76,7 +125,7 @@ echo walk($data);
 <div class="container">
 <div class="row">
 <div class="col-md-12">
-<pre><?php print_r($resources); ?></pre>
+<pre><code><?php print_r($resources); ?></code></pre>
 </div>
 </div>
 </div>
