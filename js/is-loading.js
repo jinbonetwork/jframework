@@ -1,5 +1,4 @@
 (function($){
-
 	$.fn.jfLoading = function(options){
 		var defaults = {
 			'position': "right",			// right | inside | overlay
@@ -48,32 +47,36 @@
 			}
 			return arr.join('');
 		};
-		options = options || defaults;
 
-		if(typeof options=='object'){
-			options = jQuery.extend({},defaults,options);
-			switch(options['position']){
-				case 'inside':
-				case 'overlay':
-					if(typeof addDivsData[options['class']] != 'integer'){
-						options['class'] = defaults['class2'];
-					}
-					options.pattern = '<span class="loader-inner %class%">'+addDivs(options['class'])+'</span>';
-				break;
-				default:
-				case 'right':
-					options.pattern = '<i class="%class%"></i>';
-				break;
-			}
-			if(options.text!=''&&!options.tpl.search('%text%')&&!options.pattern.search('%text%')) {
-				options.pattern += '<span class="isloading-label">%text%</span>';
-			}
-			options.tpl = options.tpl.replace('%pattern%',options.pattern);
-		}
-
-		this.each(function(index){
+		options = options || {};
+		jQuery(this).each(function(index){
+			var settings;
 			var $this = jQuery(this); 
-			$this.isLoading(options);
+			var data = $this.data();
+			if(typeof options=='object'){
+				settings = jQuery.extend(true,{},defaults,options,data);
+
+				switch(settings.position){
+					case 'inside':
+					case 'overlay':
+						if(typeof addDivsData[settings['class']] != 'number'){
+							settings['class'] = defaults['class2'];
+						}
+						settings.pattern = '<span class="loader-inner %class%">'+addDivs(settings['class'])+'</span>';
+					break;
+					default:
+					case 'right':
+						settings.pattern = '<i class="%class%"></i>';
+					break;
+				}
+				if(settings.text!=''&&!settings.tpl.search('%text%')&&!settings.pattern.search('%text%')) {
+					settings.pattern += '<span class="isloading-label">%text%</span>';
+				}
+				settings.tpl = settings.tpl.replace('%pattern%',settings.pattern);
+			}
+
+
+			$this.isLoading(settings);
 		});
 	};
 })(jQuery);
