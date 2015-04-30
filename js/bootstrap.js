@@ -1,28 +1,32 @@
 (function($){
 	$.fn.jfTooltip = function(options){
 		var defaults = {
-			animation:true,
-			container:false,
-			delay:0,
-			html:false,
-			placement:'top',
-			selector:false,
-			template:'<div class="tooltip %class%" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
-			title:'',
-			trigger:'hover focus',
-			viewpoint:{
-				selector:'body',
-				padding:0
+			"animation":true,
+			"container":false,
+			"delay":0,
+			"html":false,
+			"placement":'top',
+			"selector":false,
+			"template":'<div class="tooltip %class%" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
+			"title":"",
+			"trigger":'hover focus',
+			"viewpoint":{
+				"selector":'body',
+				"padding":0
 			},
-			class:''
-		}
-		options = options || defaults;
-		if(typeof options.class=='string'&&options.class!=''){
-			options.template = options.template.replace('%class%',options.class);
-		}
-		this.each(function(index){
+			"class":'default'
+		};
+		options = options || {};
+		jQuery(this).each(function(index){
+			var settings;
 			var $this = jQuery(this);
-			$this.tooltip(options);
+			var data = $this.data();
+			if(typeof options=='object'){
+				settings = jQuery.extend(true,{},defaults,options,data);
+
+				settings.template = settings.template.replace('%class%',settings['class']);
+			}
+			$this.tooltip(settings);
 		});
 	};
 })(jQuery);

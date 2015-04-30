@@ -32,7 +32,7 @@
 				var $target = $position=='inside'?$console:($position=='overlay'?jQuery('body'):$trigger);
 				var $timer = parseInt($trigger.attr('data-timer')) || 1000;
 
-				$target.jfLoading({position:$position});
+				$target.jfLoading(jQuery.extend({},{position:$position},$trigger.data()));
 				$console.removeClass('alert-success').addClass('alert-info');
 				setTimeout(function(){
 					$target.isLoading('hide');
@@ -49,7 +49,7 @@
 	<hr>
 	<div class="row">
 		<form class="col-md-6" style="box-sizing: border-box;padding-right: 20px;">
-			<h2>Forms & Buttons</h2>
+			<h2>Forms</h2>
 			<div class="form-group">
 				<label for="exampleInputEmail1">Email address</label>
 				<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
@@ -68,7 +68,7 @@
 					<input type="checkbox"> Check me out
 				</label>
 			</div>
-			<button type="submit" class="btn btn-default" data-toggle="tooltip" data-placement="right" data-animation=true data-title="This is a dummy tooltip!">Submit</button>
+			<button type="submit" class="btn btn-default">Submit</button>
 		</form>
 		<div class="col-md-6">
 			<div class="row">
@@ -83,12 +83,24 @@
 				</div>
 				<div class="is-loading-container">
 					<div class="alert alert-info is-loading-console">Ready to load...</div>
-					<button class="btn is-loading-button" data-is-loading-position="overlay" data-complete-label="Content loaded.">position: overlay</button>
+					<button class="btn is-loading-button" data-is-loading-position="overlay" data-complete-label="Content loaded." data-class="ball-beat">position: overlay</button>
 				</div>
 			</div>
 		</div>
 	</div>
 	<hr>
+	<div class="row">
+		<h2>Buttons & Tooltips</h2>
+		<div class="col-md-12">
+			<button class="btn btn-default" data-toggle="tooltip" data-class="default" data-placement="top" data-title="(1) This is a dummy tooltip!">Top</button>
+			<button class="btn btn-primary" data-toggle="tooltip" data-class="primary" data-placement="right" data-title="(2) This is a dummy tooltip!">Right</button>
+			<button class="btn btn-success" data-toggle="tooltip" data-class="success" data-placement="bottom" data-title="(3) This is a dummy tooltip!">Bottom</button>
+			<button class="btn btn-info" data-toggle="tooltip" data-class="info" data-placement="left" data-title="(4) This is a dummy tooltip!">Left</button>
+			<button class="btn btn-warning" data-toggle="tooltip" data-class="warning" data-placement="top" data-title="(5) This is a dummy tooltip!">Top</button>
+			<button class="btn btn-danger" data-toggle="tooltip" data-class="danger" data-placement="right" data-title="(6) This is a dummy tooltip!">Right</button>
+			<button class="btn btn-link" data-toggle="tooltip" data-class="transparent" data-placement="bottom" data-title="(7) This is a dummy tooltip!">Bottom</button>
+		</div>
+	</div>
 
 	<nav id="jgm">
 		<div class="container">
