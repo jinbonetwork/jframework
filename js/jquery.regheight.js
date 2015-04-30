@@ -2,8 +2,22 @@
 	var config;
 
 	$.fn.regHeight = function(userConfig){
+		var $this = this;
+		if(window.respond){ //IE8을 위해서는 respond.js가 필요하다.
+			var rspListen = setInterval(function(){
+				if(!window.respond.queue.length){
+					core($this, userConfig);
+					clearInterval(rspListen);
+				}
+			}, 10);
+		} else {
+			core($this, userConfig);
+		}
+	}
+
+	function core($this, userConfig){
 		//모든 컬럼의 높이값을 초기화.////
-		this.each(function(){
+		jQuery($this).each(function(){
 			jQuery(this).find('div[class^="col-"]').each(function(){
 				jQuery(this).height('');
 			});
@@ -11,18 +25,20 @@
 
 		if(typeof(config) === 'undefined') config = getConfig(userConfig); 
 		var breakPoint = getBreakPoint();
-		
-		 //브레이크 포인트가 xs보다 작으면 높이를 규제하지 않는다.////
+
+		//브레이크 포인트가 xs보다 작으면 높이를 규제하지 않는다.////
 		if(breakPoint == 'de') return;
 
 		//컬럼의 높이를 규제한다. ////
-		this.each(function(){
+		jQuery($this).each(function(){
 			var cols = jQuery(this).find('div[class^="col-"]');
 			var mode = jQuery(this).attr('data-height-mode');
+
 			if(mode == 'nounit'){
 				var ws = [];
 				for(var i = 0; i < cols.length; i++){
-					ws[i] = jQuery(cols[i])[0].getBoundingClientRect().width;
+					var rect = jQuery(cols[i])[0].getBoundingClientRect();
+					ws[i] = rect.right - rect.left;					
 				}
 				for(var i = 0; i < cols.length; i++){
 					var rh = getHeight(cols[i], breakPoint);
@@ -31,7 +47,8 @@
 					}
 				}
 			} else {
-				var uh = getUnitHeight(mode, jQuery(this)[0].getBoundingClientRect().width);
+				var rect = jQuery(this)[0].getBoundingClientRect();
+				var uh = getUnitHeight(mode, rect.right - rect.left);
 				for(var i = 0; i < cols.length; i++){
 					var nh = getHeight(cols[i], breakPoint);
 					if(nh != false) { //data-height-*가 없는 컬럼(그룹)은 높이 규제를 하지 않는다.
