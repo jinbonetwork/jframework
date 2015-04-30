@@ -1,0 +1,28 @@
+.jf-tooltip(@jf-tooltip-class:default) {
+	@jf-tooltip-brand: "brand-@{jf-tooltip-class}";
+	&.@{jf-tooltip-class} {
+		.tooltip-inner {
+			background-color: @@jf-tooltip-brand;
+		}
+		&.top .tooltip-arrow {
+			border-top-color: @@jf-tooltip-brand;
+		}
+		&.right .tooltip-arrow {
+			border-right-color: @@jf-tooltip-brand;
+		}
+		&.bottom .tooltip-arrow {
+			border-bottom-color: @@jf-tooltip-brand;
+		}
+		&.left .tooltip-arrow {
+			border-left-color: @@jf-tooltip-brand;
+		}
+	}
+}
+
+.tooltip {
+	.jf-tooltip(primary);
+	.jf-tooltip(success);
+	.jf-tooltip(info);
+	.jf-tooltip(warning);
+	.jf-tooltip(danger);
+}
