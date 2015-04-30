@@ -45,7 +45,7 @@
 </head>
 <body>
 <div class="container">
-	<h1><i class=""></i> jFramework Test</h1>
+	<h1><i class="j-logos-jinbonet"></i> jFramework Test</h1>
 	<hr>
 	<div class="row">
 		<form class="col-md-6" style="box-sizing: border-box;padding-right: 20px;">
