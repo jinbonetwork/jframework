@@ -12,8 +12,18 @@
 	<script src="../contrib/respond/1.4.2/dest/respond.min.js"></script><!-- for explorer 8 -->
 	<script src="../contrib/bootstrap/3.3.4/dist/js/bootstrap.min.js"></script>
 	
-	<script src="../js/jquery.regheight.js"></script>
-	<script src="script.js"></script>
+	<script src="../js/regheight.js"></script>
+	<script>
+		jQuery(document).ready(function(){
+			resize();
+		});
+		jQuery(window).resize(function(){
+			resize();
+		});
+		function resize(){
+			jQuery('div[data-height-mode]').regHeight();
+		}
+	</script>
 	<style>
 		.color1 { background-color: #cccccc; }
 		.color2 { background-color: #ff8822; }
