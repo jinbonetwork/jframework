@@ -81,7 +81,7 @@
 		"js":[
 			"contrib/bootstrap/3.3.4/dist/js/bootstrap.min.js",
 			"js/bootstrap.js",
-			"js/regHeight.js",
+			"js/regheight.js",
 			"js/script.js"
 		],
 		"css":["css/style.css"],

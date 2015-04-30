@@ -2,23 +2,18 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 	<link rel="stylesheet/less" type="text/css" href="./style.less">
-	<script src="../contrib/less.js/2.5.0/dist/less.min.js"></script>
-	<script src="../contrib/jquery/2.1.3/jquery.min.js"></script>
+
+	<!--<script src="../contrib/jquery/2.1.3/jquery-2.1.3.min.js"></script>-->
+	<script src="../contrib/jquery/1.11.2/jquery-1.11.2.min.js"></script><!-- for explorer 8 -->
+
+	<script src="../contrib/respond/1.4.2/dest/respond.min.js"></script><!-- for explorer 8 -->
 	<script src="../contrib/bootstrap/3.3.4/dist/js/bootstrap.min.js"></script>
-	<script src="../js/jquery.regheight-1.0.js"></script>
-	<script>
-		jQuery(document).ready(function(){
-			resize();
-		});
-		jQuery(window).resize(function(){
-			resize();
-		});
-		function resize(){
-			jQuery('div[data-height-mode]').regHeight();
-		}
-	</script>
+	
+	<script src="../js/jquery.regheight.js"></script>
+	<script src="script.js"></script>
 	<style>
 		.color1 { background-color: #cccccc; }
 		.color2 { background-color: #ff8822; }
