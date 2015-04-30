@@ -53,7 +53,7 @@ jframework
 * data -- 마크업 컴포넌트에서 사용할 json 파일.
 * test -- 개발용 샘플 모음.
 
-높이 조정 스크립트(jquery.regHeight-1.0.js)의 사용
+높이 조정 스크립트(regheight.js)의 사용
 ------------------------------
 * 사용
 	* jQuery(_선택자_).regHeight(_user config_);
