@@ -48,6 +48,9 @@ jframework
 			* 4.3.0
 		* [webfonts](https://github.com/singihae/Webfonts) -- (CSS) 한글 웹폰트.
 			* 2015.01.14
+		* jframework icons -- (CSS) 진보넷 프로젝트에 사용할 아이콘 폰트 및 스타일시트.
+			* 코드 일람표는 docs/jfont/index.html 에서 확인할 것.
+			* 2015.04.30
 * svgs -- 자체 웹폰트 제작에 사용한 svg 파일들.
 * fonts -- 자체 웹폰트 파일.
 * less -- 외부 CSS 리소스들을 바탕으로 한 사용자 스타일시트 소스.
