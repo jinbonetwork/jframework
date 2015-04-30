@@ -50,16 +50,25 @@
 	<div class="row">
 		<form class="col-md-6" style="box-sizing: border-box;padding-right: 20px;">
 			<h2>Forms</h2>
-			<div class="form-group">
-				<label class="sr-only" for="exampleTwitterID">Twitter</label>
+			<div class="form-group has-feedback">
+				<label class="control-label" for="exampleTwitterID">Twitter</label>
+				<div class="input-group">
+					<span class="input-group-addon">@</span>
+					<input type="text" class="form-control" name="exampleTwitterID" id="exampleTwitterID">
+				</div>
+				<span class="form-control-feedback"><i class="fa fa-exclamation"></i></span>
 			</div>
-			<div class="form-group">
-				<label for="exampleInputEmail1">Email address</label>
-				<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+			<div class="form-group has-success has-feedback">
+				<div class="input-group">
+					<span class="input-group-addon"><label class="control-label" for="exampleInputEmail1">Email address</label></span>
+					<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+				</div>
+				<span class="form-control-feedback"><i class="fa fa-check"></i></span>
 			</div>
-			<div class="form-group">
+			<div class="form-group has-warning has-feedback">
 				<label for="exampleInputPassword1">Password</label>
 				<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+				<span class="form-control-feedback"><i class="fa fa-exclamation-circle"></i></span>
 			</div>
 			<div class="form-group">
 				<label for="exampleInputFile">File input</label>
