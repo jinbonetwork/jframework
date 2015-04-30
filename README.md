@@ -35,11 +35,15 @@ jframework
 			* `.isLoading()` 대신 js/is-loading.js에 새로 정의한 `.jfLoading()` 메서드를 사용할 것.
 		* [loaders.css](http://connoratherton.com/loaders) -- (CSS) '로딩 중' 표시에 사용할 CSS 애니메이션 스타일.
 			* 0.1.1
+  * 직접 작성
+		* regheight -- (JS) `data-height-mode` 옵션에 따라 블록 높이를 맟추는 스크립트.
+			* 1.0
 	* 기본 소스에 포함	
 		* [normalize](https://github.com/necolas/normalize.css) -- (CSS) 초기화 코드.
 			* 3.0.3
 		* [bootstrap](https://github.com/twbs/bootstrap) -- (CSS) grid 및 responsive.
 			* 3.3.4
+			* `.tooltip()` 대신 js/bootstrap.js에 새로 정의한 `.jfTooltip()` 메서드를 사용할 것.
 		* [font-awesome](https://github.com/FortAwesome/Font-Awesome) -- (CSS) 아이콘 폰트.
 			* 4.3.0
 		* [webfonts](https://github.com/singihae/Webfonts) -- (CSS) 한글 웹폰트.
@@ -50,7 +54,7 @@ jframework
 * css -- less 디렉토리의 소스들을 변환한 실제 스타일시트 파일.
 * js -- jquery 베이스의 사용자 스크립트.
 * html -- 글로벌 메뉴 등의: 마크업 컴포넌트.
-* data -- 마크업 컴포넌트에서 사용할 json 파일.
+* data -- 설정 파일 및 각 라이브러리의 의존성을 명시한 map 파일. (json 형식)
 * test -- 개발용 샘플 모음.
 
 높이 조정 스크립트(jquery.regHeight-1.0.js)의 사용
