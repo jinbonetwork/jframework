@@ -73,8 +73,9 @@
 					settings.pattern += '<span class="isloading-label">%text%</span>';
 				}
 				settings.tpl = settings.tpl.replace('%pattern%',settings.pattern);
+			}else{
+				settings = options;
 			}
-
 
 			$this.isLoading(settings);
 		});

@@ -35,7 +35,7 @@ jframework
 			* `.isLoading()` 대신 js/is-loading.js에 새로 정의한 `.jfLoading()` 메서드를 사용할 것.
 		* [loaders.css](http://connoratherton.com/loaders) -- (CSS) '로딩 중' 표시에 사용할 CSS 애니메이션 스타일.
 			* 0.1.1
-  * 직접 작성
+	* 직접 작성
 		* regheight -- (JS) `data-height-mode` 옵션에 따라 블록 높이를 맟추는 스크립트.
 			* 1.0
 	* 기본 소스에 포함	

@@ -25,6 +25,8 @@
 				settings = jQuery.extend(true,{},defaults,options,data);
 
 				settings.template = settings.template.replace('%class%',settings['class']);
+			}else{
+				settings = options
 			}
 			$this.tooltip(settings);
 		});
