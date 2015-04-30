@@ -14,15 +14,19 @@
 				selector:'body',
 				padding:0
 			},
-			class:''
-		}
+			class:'default'
+		};
 		options = options || defaults;
-		if(typeof options.class=='string'&&options.class!=''){
+		if(typeof options!='string'){
 			options.template = options.template.replace('%class%',options.class);
+			options = jQuery.extend({},options,this.data());
 		}
+		jQuery(this).tooltip(options);
+		/*
 		this.each(function(index){
 			var $this = jQuery(this);
 			$this.tooltip(options);
 		});
+		*/
 	};
 })(jQuery);
