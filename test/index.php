@@ -51,6 +51,9 @@
 		<form class="col-md-6" style="box-sizing: border-box;padding-right: 20px;">
 			<h2>Forms</h2>
 			<div class="form-group">
+				<label class="sr-only" for="exampleTwitterID">Twitter</label>
+			</div>
+			<div class="form-group">
 				<label for="exampleInputEmail1">Email address</label>
 				<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
 			</div>
