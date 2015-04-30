@@ -26,7 +26,7 @@
 
 				settings.template = settings.template.replace('%class%',settings['class']);
 			}else{
-				settings = options
+				settings = options;
 			}
 			$this.tooltip(settings);
 		});
