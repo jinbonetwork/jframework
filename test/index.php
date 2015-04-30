@@ -16,10 +16,15 @@
 	<script src="../<?php echo $resources['is-loading']['js'][0]; ?>"></script>
 	<script src="../<?php echo $resources['is-loading']['js'][1]; ?>"></script>
 	<script src="../<?php echo $resources['jframework']['js'][0]; ?>"></script>
+	<script src="../<?php echo $resources['jframework']['js'][1]; ?>"></script>
+	<script src="../<?php echo $resources['jframework']['js'][2]; ?>"></script>
 
 	<link rel="stylesheet/less" type="text/css" href="../test/style.less">
 	<script>
 		jQuery(document).ready(function(e){
+			jQuery(document).ready(function(e){
+				jQuery('[data-toggle="tooltip"]').jfTooltip();
+			});
 			jQuery('.is-loading-button').on('click',function(e){
 				var $trigger = jQuery(this).prop('disabled','disabled');
 				var $console = (typeof $trigger.attr('data-console')=='string'&&$trigger.attr('data-console')!='')?jQuery($trigger.attr('data-console')):$trigger.closest('.is-loading-container').find('.is-loading-console');
@@ -63,7 +68,7 @@
 					<input type="checkbox"> Check me out
 				</label>
 			</div>
-			<button type="submit" class="btn btn-default">Submit</button>
+			<button type="submit" class="btn btn-default" data-toggle="tooltip" data-placement="right" data-animation=true data-title="This is a dummy tooltip!">Submit</button>
 		</form>
 		<div class="col-md-6">
 			<div class="row">

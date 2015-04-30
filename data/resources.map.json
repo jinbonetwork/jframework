@@ -78,7 +78,12 @@
 		]
 	},
 	"jframework":{
-		"js":["js/script.js"],
+		"js":[
+			"contrib/bootstrap/3.3.4/dist/js/bootstrap.min.js",
+			"js/bootstrap.js",
+			"js/regHeight.js",
+			"js/script.js"
+		],
 		"css":["css/style.css"],
 		"priority":"-999999999",
 		"deps":["jquery"]
