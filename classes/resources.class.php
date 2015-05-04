@@ -28,15 +28,12 @@ class JFResources extends JF {
 				fclose($fp);
 				$this->resource_map = json_decode($json,true);
 			}
-			$jframework = $context->getProperty('service.useJframework');
-			if($jframework) {
-				$map_file = $jframework."/data/resources.map.json";
+			$map_file = $jframework."/data/resources.map.json";
+			$this->mergeMap($jframework,$map_file);
+			$browser = new Browser();
+			if($browser->getBrowser() == Browser::BROWSER_IE && $browser->getVersion() <= 9) {
+				$map_file = $jframework."/data/resources.map.fallback.json";
 				$this->mergeMap($jframework,$map_file);
-				$browser = new Browser();
-				if($browser->getBrowser() == Browser::BROWSER_IE && $browser->getVersion() <= 9) {
-					$map_file = $jframework."/data/resources.map.fallback.json";
-					$this->mergeMap($jframework,$map_file);
-				}
 			}
 		}
 		return $this->resource_map;

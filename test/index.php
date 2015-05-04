@@ -4,12 +4,16 @@
 	<meta charset="utf-8">
 <?php
 	require_once dirname(__FILE__).'/../jframework.php';
-	$jf = new JFResources;
- 	$jf->printResources(array(
+	JFResources::instance();
+	foreach(array(
 		'less.js',
 		'is-loading',
 		'jframework',
-	));
+	) as $required){
+		JFResources::addResource($required);
+	}
+	JFResources::renderCss();
+	JFResources::renderJs();
 ?>
 	<link rel="stylesheet/less" type="text/css" href="../test/style.less">
 	<script>
