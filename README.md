@@ -10,6 +10,8 @@ jframework
 	* 단순 저장
 		* [lessphp](http://leafo.net/lessphp/) -- (PHP) 개발 환경에서 사용할 백엔드 CSS 전처리 도구.
 			* 0.4.0
+		* [browser.php](http://chrisschuld.com/projects/browser-php-detecting-a-users-browser-from-php.html) -- (PHP) 서버 측에서 접속자 브라우저를 판별하기 위한 라이브러리.
+			* 2015.05.04
 		* [less.js](http://lesscss.org) -- (JS) 개발 환경에서 사용할 프론트엔드 CSS 전처리 도구.
 			* 2.5.0
 		* [modernizr](http://modernizr.com) -- (JS) HTML5/CSS3 호환성 검사 라이브러리.
@@ -23,8 +25,10 @@ jframework
 			* 1.11.2 -- data/resources.map.fallback.json
 		* [fancybox](http://fancyapps.com) -- (JS, CSS) 전체화면 오버레이 기능을 제공하는 jQuery 플러그인.
 			* 2.1.5
-		* [imagesloaded]() -- (JS) 이미지가 실제로 로드됐을 때 사용자 함수를 실행하는 jQuery 플러그인.
+		* [imagesloaded](http://imagesloaded.desandro.com/) -- (JS) 이미지가 실제로 로드됐을 때 사용자 함수를 실행하는 jQuery 플러그인.
 			* 3.1.8
+		* [swiper](http://www.idangero.us/swiper/) -- (JS, CSS) 슬라이드쇼를 생성하는 라이브러리. jQuery 플러그인 형식으로 사용함.
+			* 3.0.7
 	* 사용자화
 		* [jquery-ui](http://jqueryui.com) -- (JS, CSS) 몇 가지 사용자 인터페이스 세트를 제공하는 jQuery 플러그인.
 			* 1.11.4

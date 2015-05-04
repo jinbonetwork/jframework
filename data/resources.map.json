@@ -77,6 +77,12 @@
 			"loaders.css"
 		]
 	},
+	"swiper":{
+		"js":["contrib/swiper/3.0.7/dist/js/swiper.jquery.min.js"],
+		"css":["contrib/swiper/3.0.7/dist/css/swiper.min.css"],
+		"priority":"-999999999",
+		"deps":["jquery"]
+	},
 	"jframework":{
 		"js":[
 			"contrib/bootstrap/3.3.4/dist/js/bootstrap.min.js",
