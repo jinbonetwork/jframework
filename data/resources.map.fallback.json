@@ -32,5 +32,11 @@
 			"jquery",
 			"jframework-fallback"
 		]
+	},
+	"swiper":{
+		"js":["contrib/swiper/2.7.6/dist/idangerous.swiper.min.js"],
+		"css":["contrib/swiper/2.7.6/dist/idangerous.swiper.css"],
+		"priority":"-999999999",
+		"deps":["jquery"]
 	}
 }
