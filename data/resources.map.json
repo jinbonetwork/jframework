@@ -5,6 +5,15 @@
 		"priority":"-999999999",
 		"deps":[]
 	},
+	"html5shiv":{
+		"js":["contrib/html5shiv/3.7.2/dist/html5shiv.min.js"],
+		"css":[],
+		"priority":"-999999999",
+		"options":{
+			"condition":"if lte IE 9"
+		},
+		"deps":[]
+	},
 	"modernizr":{
 		"js":["contrib/modernizr/2.8.3/modernizr.custom.js"],
 		"css":[],
@@ -34,6 +43,12 @@
 		"css":[],
 		"priority":"-999999999",
 		"deps":["mobile-detect.js"]
+	},
+	"js-cookie":{
+		"js":["contrib/js-cookie/1.5.1/src/js.cookie.js"],
+		"css":[],
+		"priority":"-999999999",
+		"deps":["jquery"]
 	},
 	"jquery-ui":{
 		"js":["contrib/jquery-ui/1.11.4/jquery-ui.min.js"],

@@ -1,100 +1,95 @@
 <?php
 class JFResources extends JF {
+
+	public static $map;
+	public static $map_fallback;
+	public static $force_fallback = false;
+
 	public static $css = array();
 	public static $js = array();
-	private static $map = array();
-
-	public static function instance() {
-		return self::_instance(__CLASS__);
-	}
+	private static $index = array();
 
 	function __construct() {
 	}
 
 	public static function initMap() {
-		if(!self::$map) {
-			$config = self::instance();
-			self::$map = $config->readResourceMap();
+		self::$map = JF_PATH."/data/resources.map.json";
+		self::$map_fallback = JF_PATH."/data/resources.map.fallback.json";
+		if(!self::$index) {
+			self::initResourceMap();
 		}
 	}
 
-	public function readResourceMap() {
-		if(!$this->resoure_map) {
-			$context = self::instance();
-			$map_file = JF_PATH."/config/resources.map.json";
-			if(file_exists($map_file)) {
-				$fp = fopen($map_file,"r");
-				$json = trim(fread($fp,filesize($map_file)));
-				fclose($fp);
-				$this->resource_map = json_decode($json,true);
-			}
-			$map_file = $jframework."/data/resources.map.json";
-			$this->mergeMap($jframework,$map_file);
-			$browser = new Browser();
-			if($browser->getBrowser() == Browser::BROWSER_IE && $browser->getVersion() <= 9) {
-				$map_file = $jframework."/data/resources.map.fallback.json";
-				$this->mergeMap($jframework,$map_file);
-			}
+	public function initResourceMap() {
+		if(file_exists(self::$map)) {
+			self::loadResourceMap(self::$map,false);
 		}
-		return $this->resource_map;
+		$browser = new Browser();
+		if(self::$force_fallback||($browser->getBrowser()==Browser::BROWSER_IE&&$browser->getVersion()<=9)) {
+			self::loadResourceMap(self::$map_fallback);
+		}
+		return self::$map;
 	}
 
-	public function mergeMap($uri,$map_file) {
-		if(file_exists($map_file)) {
-			$fp = fopen($map_file,"r");
-			$maps = json_decode(trim(fread($fp,filesize($map_file))),true);
+	public function loadResourceMap($source,$merge=true) {
+		if(file_exists($source)) {
+			$fp = fopen($source,"r");
+			$json = json_decode(trim(fread($fp,filesize($source))),true);
 			fclose($fp);
-			if($maps) {
-				foreach($maps as $k => $r) {
+			if($merge) {
+				foreach($json as $k => $r) {
 					for($i=0; $i<@count($r['css']); $i++) {
 						$r['css'][$i] = $uri."/".$r['css'][$i];
 					}
 					for($i=0; $i<@count($r['js']); $i++) {
 						$r['js'][$i] = $uri."/".$r['js'][$i];
 					}
-					$this->resource_map[$k] = $r;
+					self::$index[$k] = $r;
 				}
+			}else{
+				self::$index = $json;
 			}
 		}
+		return $json;
 	}
 
 	public static function addResource($key,$priority=0) {
-		if(!self::$map) self::initMap();
-		if(!self::$map[$key]) return;
-		if(self::$map[$key]['loaded'] == true) return;
-		$map = self::$map[$key];
+		if(!self::$index) self::initMap();
+		if(!self::$index[$key]) return;
+		if(self::$index[$key]['loaded'] == true) return;
+		$index = self::$index[$key];
 		if(!$priority) {
-			if($map['priority']) $priority = $map['priority'];
-		} else if($priority && $map['priority']) {
-			if($priority > $map['priority']) $priority = $map['priority'];
+			if($index['priority']) $priority = $index['priority'];
+		} else if($priority && $index['priority']) {
+			if($priority > $index['priority']) $priority = $index['priority'];
 		}
-		if($map['deps'] && is_array($map['deps'])) {
-			if(@count($map['deps']) > 0) {
-				foreach($map['deps'] as $deps) {
+		if($index['deps'] && is_array($index['deps'])) {
+			if(@count($index['deps']) > 0) {
+				foreach($index['deps'] as $deps) {
 					self::depResource($deps,$priority);
 				}
 			}
 		}
-		if($map['options']) {
-			$options = $map['options'];
+		if($index['options']) {
+			$options = $index['options'];
 		}
-		if($map['js'] && @count($map['js']) > 0) {
-			foreach($map['js'] as $js) {
-				self::addJsURI(JF_URI.$js,$priority,$options);
+		if($index['js'] && @count($index['js']) > 0) {
+			foreach($index['js'] as $js) {
+				self::addJsURI(JF_URI."/".$js,$priority,$options);
 			}
 		}
-		if($map['css'] && @count($map['css']) > 0) {
-			foreach($map['css'] as $css) {
-				self::addCssURI(JF_URI.$css,$priority,$options);
+		if($index['css'] && @count($index['css']) > 0) {
+			foreach($index['css'] as $css) {
+				self::addCssURI(JF_URI."/".$css,$priority,$options);
 			}
 		}
-		self::$map[$key]['loaded'] = true;
+		self::$index[$key]['loaded'] = true;
 	}
 
 	private static function depResource($key,$priority) {
-		if(!self::$map[$key]) return;
-		if($priority < ($map['priority'] ? $map['priority'] : 0)) $_priority = $priority;
-		else if($map['priority']) $_priority = $map['priority'];
+		if(!self::$index[$key]) return;
+		if($priority < ($index['priority'] ? $index['priority'] : 0)) $_priority = $priority;
+		else if($index['priority']) $_priority = $index['priority'];
 		self::addResource($key,$_priority);
 	}
 
@@ -199,7 +194,7 @@ class JFResources extends JF {
 	}
 
 	private static function sortCssByPriority() {
-		if(is_array(self::$css)) {
+		if(is_array(self::$css) && count(self::$css) > 0) {
 			foreach(self::$css as $css) {
 				if(!$cssOrder[$css['priority']]) $cssOrder[$css['priority']] = array();
 				$cssOrder[$css['priority']][] = $css;
@@ -210,7 +205,7 @@ class JFResources extends JF {
 	}
 
 	private static function sortJsByPriority() {
-		if(is_array(self::$js)) {
+		if(is_array(self::$js) && count(self::$js) > 0) {
 			foreach(self::$js as $js) {
 				if(!$jsOrder[$js['priority']]) $jsOrder[$js['priority']] = array();
 				$jsOrder[$js['priority']][] = $js;
@@ -314,5 +309,6 @@ class JFResources extends JF {
 
 	function __destruct() {
 	}
+
 }
 ?>
