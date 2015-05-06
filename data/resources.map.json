@@ -93,7 +93,7 @@
 		]
 	},
 	"swiper":{
-		"js":["contrib/swiper/3.0.7/dist/js/swiper.jquery.min.js"],
+		"js":["contrib/swiper/3.0.7/dist/js/swiper.min.js"],
 		"css":["contrib/swiper/3.0.7/dist/css/swiper.min.css"],
 		"priority":"-999999999",
 		"deps":["jquery"]
