@@ -20,16 +20,15 @@ jframework
 			* 1.0.0
 		* [respond](https://github.com/scottjehl/Respond) -- IE8에서 반응형 처리를 보조하기 위한 fallback 라이브러리.
 			* 1.4.2
-		* [jquery](http://jquery.com) -- (JS) 자바스크립트 프레임워크.
-			* 2.1.3 -- data/resources.map.json
-			* 1.11.2 -- data/resources.map.fallback.json
-		* [fancybox](http://fancyapps.com) -- (JS, CSS) 전체화면 오버레이 기능을 제공하는 jQuery 플러그인.
-			* 2.1.5
 		* [imagesloaded](http://imagesloaded.desandro.com/) -- (JS) 이미지가 실제로 로드됐을 때 사용자 함수를 실행하는 jQuery 플러그인.
 			* 3.1.8
 		* [swiper](http://www.idangero.us/swiper/) -- (JS, CSS) 슬라이드쇼를 생성하는 라이브러리. jQuery 플러그인 형식으로 사용함.
 			* 3.0.7
 	* 사용자화
+		* [jquery](http://jquery.com) -- (JS) 자바스크립트 프레임워크.
+			* 2.1.3 -- data/resources.map.json
+			* 1.11.2 -- data/resources.map.fallback.json
+			* js/jquery.js에서 `jQuery.noConflict()` 메서드를 실행
 		* [jquery-ui](http://jqueryui.com) -- (JS, CSS) 몇 가지 사용자 인터페이스 세트를 제공하는 jQuery 플러그인.
 			* 1.11.4
 			* less/jquery-ui.less > css/jquery-ui.css
@@ -39,6 +38,9 @@ jframework
 			* `.isLoading()` 대신 js/is-loading.js에 새로 정의한 `.jfLoading()` 메서드를 사용할 것.
 		* [loaders.css](http://connoratherton.com/loaders) -- (CSS) '로딩 중' 표시에 사용할 CSS 애니메이션 스타일.
 			* 0.1.1
+		* [fancybox](http://fancyapps.com) -- (JS, CSS) 전체화면 오버레이 기능을 제공하는 jQuery 플러그인.
+			* 2.1.5
+			* `.fancybox()` 메서드에 옵션을 추가한 `jfFancybox()` 메서드를 js/fancybox.js에 추가함.
 	* 직접 작성
 		* regheight -- (JS) `data-height-mode` 옵션에 따라 블록 높이를 맟추는 스크립트.
 			* 1.0

@@ -4,13 +4,13 @@
 	<meta charset="utf-8">
 <?php
 	require_once dirname(__FILE__).'/../jframework.php';
+	JFResources::$force_fallback = true;
 	JFTemplates::printHead(array(
-		//'less.js',
 		'is-loading',
 		'jframework',
 	));
 ?>
-	<link rel="stylesheet/less" type="text/css" href="../test/style.css">
+	<link rel="stylesheet" type="text/css" href="../test/style.less">
 	<script>
 		jQuery(document).ready(function(e){
 			jQuery(document).ready(function(e){

@@ -97,7 +97,7 @@ class JFResources extends JF {
 		if(preg_match("/(.+)\.js$/i",$css)) {
 			self::addJs($css,$priority,$options);
 		} else {
-			self::pushCss(JF_RESOURCE_URI.'/css/'.$css,$priority,'src',$options);
+			self::pushCss(JF_URI.'/css/'.$css,$priority,'src',$options);
 		}
 	}
 
@@ -105,7 +105,7 @@ class JFResources extends JF {
 		if(preg_match("/(.+)\.js$/i",$css)) {
 			self::addJs($css,$priority,$options);
 		} else {
-			self::pushCss(JF_RESOURCE_URI.'/js/'.$css,$priority,'src',$options);
+			self::pushCss(JF_URI.'/js/'.$css,$priority,'src',$options);
 		}
 	}
 
@@ -121,7 +121,7 @@ class JFResources extends JF {
 		if(preg_match("/(.+)\.js$/i",$css)) {
 			self::addLibraryJs($css,$priority,$options);
 		} else {
-			self::pushCss(JF_CONTRIBUTE_URI."/".$css,$priority,'src',$options);
+			self::pushCss(JF_URI."/".$css,$priority,'src',$options);
 		}
 	}
 
@@ -145,7 +145,7 @@ class JFResources extends JF {
 		if(preg_match("/(.+)\.css$/i",$js)) {
 			self::addJsCss($js,$priority,$options);
 		} else {
-			self::pushJs(JF_RESOURCE_URI.'/js/'.$js,$priority,'src',$options);
+			self::pushJs(JF_URI.'/js/'.$js,$priority,'src',$options);
 		}
 	}
 
@@ -153,7 +153,7 @@ class JFResources extends JF {
 		if(preg_match("/(.+)\.css$/i",$js)) {
 			self::addCss($js,$priority,$options);
 		} else {
-			self::pushJs(JF_RESOURCE_URI.'/script/'.$js,$priority,'src',$options);
+			self::pushJs(JF_URI.'/script/'.$js,$priority,'src',$options);
 		}
 	}
 
@@ -173,7 +173,7 @@ class JFResources extends JF {
 		if(preg_match("/(.+)\.css$/i",$js)) {
 			self::addLibraryCss($js,$priority,$options);
 		} else {
-			self::pushJs(JF_CONTRIBUTE_URI.'/'.$js,$priority,'src',$options);
+			self::pushJs(JF_URI.'/'.$js,$priority,'src',$options);
 		}
 	}
 

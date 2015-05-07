@@ -1,0 +1,4 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+	RewriteRule (.*\.less) less.php?source=$1
+</IfModule>
