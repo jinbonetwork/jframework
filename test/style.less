@@ -31,21 +31,41 @@ body {
 }
 
 #jf_fallback_overlay {
-	width: 800px;
-	height: 600px;
+	width: 710px;
+	height: 560px;
 	background-color: #FFFFFF;
 
+	* {
+		box-sizing: content-box;
+	}
+
 	.wrap {
-		background-color: #A3D1C9;
+		width: 670px;
+		height: 520px;
+		margin: 20px;
 	}
 
 	.summary {
+		background-color: #A3D1C9;
+		padding: 60px 60px 0 60px;
+
+		.description {
+			margin-top: 40px;
+
+			p + p {
+				margin-top: 20px;
+			}
+		}
 	}
 
 	.links {
+		background-color: #A3D1C9;
+		padding: 40px 60px;
+
 		.group {
 			display: inline-block;
 			vertical-align: top;
+			margin: 0 20px;
 
 			&.browsers {
 			}
@@ -72,6 +92,7 @@ body {
 	}
 
 	.controls {
+		margin-top: 16px;		
 	}
 
 	.sprite {
