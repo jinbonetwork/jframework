@@ -48,11 +48,11 @@
   height: 100px;
   vertical-align: top;
 }
-#jf_fallback_overlay .links .controls .form-inline .form-group.flag label {
-  white-space: nowrap;
-}
 #jf_fallback_overlay .controls {
   margin-top: 16px;
+}
+#jf_fallback_overlay .controls .form-inline .form-group.flag label {
+  white-space: nowrap;
 }
 #jf_fallback_overlay .sprite {
   display: block;
