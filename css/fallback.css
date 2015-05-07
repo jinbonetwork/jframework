@@ -110,10 +110,10 @@
 #jf_fallback_overlay .sprite.browser.google-chrome:hover {
   background-position: 0px -100px;
 }
-#jf_fallback_overlay .sprite.browser.mozila-firefox {
+#jf_fallback_overlay .sprite.browser.mozilla-firefox {
   background-position: -100px 0px;
 }
-#jf_fallback_overlay .sprite.browser.mozila-firefox:hover {
+#jf_fallback_overlay .sprite.browser.mozilla-firefox:hover {
   background-position: -100px -100px;
 }
 #jf_fallback_overlay .sprite.browser.microsoft-internet-explorer {
