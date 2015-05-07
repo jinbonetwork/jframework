@@ -48,7 +48,7 @@
   height: 100px;
   vertical-align: top;
 }
-#jf_fallback_overlay .links .controls {
+#jf_fallback_overlay .links .controls .form-inline .form-group.flag label {
   white-space: nowrap;
 }
 #jf_fallback_overlay .controls {
