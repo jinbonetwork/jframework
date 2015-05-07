@@ -92,7 +92,7 @@
 		var defaultConfig = { "grid_columns": 12, "screen_xs_min": 480, "screen_sm_min": 768, "screen_md_min": 992, "screen_lg_min": 1200 };
 		if(typeof(userConfig) === 'undefined'){
 			jQuery.ajax({
-				url: '../data/config.json',
+				url: JF_URI+'/data/config.json',
 				dataType: 'json',
 				async: false,
 				success: function(data){

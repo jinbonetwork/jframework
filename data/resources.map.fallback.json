@@ -1,6 +1,9 @@
 {
 	"jquery":{
-		"js":["contrib/jquery/1.11.2/jquery-1.11.2.min.js"],
+		"js":[
+			"contrib/jquery/1.11.2/jquery-1.11.2.min.js",
+			"js/jquery.js"
+		],
 		"css":[],
 		"priority":"-999999999",
 		"deps":[
@@ -8,9 +11,25 @@
 			"mobile-detect.js"
 		]
 	},
-	"jframework-fallback":{
-		"js":["js/fallback.js"],
-		"css":["css/fallback.css"],
+	"swiper":{
+		"js":["contrib/swiper/2.7.6/dist/idangerous.swiper.min.js"],
+		"css":["contrib/swiper/2.7.6/dist/idangerous.swiper.css"],
+		"priority":"-999999999",
+		"deps":["jquery"]
+	},
+	"jframework":{
+		"js":[
+			"contrib/bootstrap/3.3.4/dist/js/bootstrap.min.js",
+			"js/jframework.js.php",
+			"js/bootstrap.js",
+			"js/regheight.js",
+			"js/script.js",
+			"js/fallback.js"
+		],
+		"css":[
+			"css/style.css",
+			"css/fallback.css"
+		],
 		"priority":"-999999999",
 		"deps":[
 			"respond",
@@ -18,25 +37,5 @@
 			"js-cookie",
 			"fancybox"
 		]
-	},
-	"jframework":{
-		"js":[
-			"contrib/bootstrap/3.3.4/dist/js/bootstrap.min.js",
-			"js/bootstrap.js",
-			"js/regheight.js",
-			"js/script.js"
-		],
-		"css":["css/style.css"],
-		"priority":"-999999999",
-		"deps":[
-			"jquery",
-			"jframework-fallback"
-		]
-	},
-	"swiper":{
-		"js":["contrib/swiper/2.7.6/dist/idangerous.swiper.min.js"],
-		"css":["contrib/swiper/2.7.6/dist/idangerous.swiper.css"],
-		"priority":"-999999999",
-		"deps":["jquery"]
 	}
 }
