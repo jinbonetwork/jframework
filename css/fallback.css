@@ -48,6 +48,9 @@
   height: 100px;
   vertical-align: top;
 }
+#jf_fallback_overlay .links .controls {
+  white-space: nowrap;
+}
 #jf_fallback_overlay .controls {
   margin-top: 16px;
 }
