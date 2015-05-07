@@ -51,6 +51,9 @@
 #jf_fallback_overlay .controls {
   margin-top: 16px;
 }
+#jf_fallback_overlay .controls .form-inline .form-group.flag {
+  width: 150px;
+}
 #jf_fallback_overlay .controls .form-inline .form-group.flag label {
   white-space: nowrap;
 }
