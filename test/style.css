@@ -1,0 +1,18 @@
+body {
+  font-family: '맑은 고딕', 'Malgun Gothic', Helbetica, sans-serif;
+}
+#jgm .jgm-group ul.jgm-group-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#jgm .jgm-group ul.jgm-group-items li.jgm-group-item {
+  margin: 0;
+  padding: 0;
+}
+#jgm .jgm-group ul.jgm-group-items li.jgm-group-item a span:before {
+  content: '\F0AC';
+  display: inline;
+  margin-right: 0.2em;
+  font-family: 'FontAwesome';
+}

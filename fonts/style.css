@@ -1,0 +1,233 @@
+@font-face {
+	font-family: 'jfont';
+	src:url('./jfont.eot?-n5n4xf');
+	src:url('./jfont.eot?#iefix-n5n4xf') format('embedded-opentype'),
+		url('./jfont.woff?-n5n4xf') format('woff'),
+		url('./jfont.ttf?-n5n4xf') format('truetype'),
+		url('./jfont.svg?-n5n4xf#jfont') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="j-"], [class*=" j-"] {
+	font-family: 'jfont';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.j-apparatus-bluehouse-en:before {
+	content: "\e600";
+}
+
+.j-apparatus-bluehouse-kr:before {
+	content: "\e601";
+}
+
+.j-apparatus-kocsc:before {
+	content: "\e602";
+}
+
+.j-apparatus-mogaha:before {
+	content: "\e603";
+}
+
+.j-apparatus-nis:before {
+	content: "\e604";
+}
+
+.j-apparatus-pipc:before {
+	content: "\e605";
+}
+
+.j-misc-banned:before {
+	content: "\e606";
+}
+
+.j-misc-handshake-1:before {
+	content: "\e607";
+}
+
+.j-misc-handshake-2:before {
+	content: "\e608";
+}
+
+.j-misc-handshake-3:before {
+	content: "\e609";
+}
+
+.j-misc-kakaotalk:before {
+	content: "\e60a";
+}
+
+.j-movement-candlelight:before {
+	content: "\e60b";
+}
+
+.j-movement-factory:before {
+	content: "\e60c";
+}
+
+.j-movement-fist:before {
+	content: "\e60d";
+}
+
+.j-movement-fist-o:before {
+	content: "\e60e";
+}
+
+.j-movement-guy-fawkes:before {
+	content: "\e60f";
+}
+
+.j-movement-hammer-and-sickle:before {
+	content: "\e610";
+}
+
+.j-movement-nuclear:before {
+	content: "\e611";
+}
+
+.j-movement-tent:before {
+	content: "\e612";
+}
+
+.j-movement-tower:before {
+	content: "\e613";
+}
+
+.j-movement-tower-o:before {
+	content: "\e614";
+}
+
+.j-remembrance-boat:before {
+	content: "\e615";
+}
+
+.j-remembrance-boat-o:before {
+	content: "\e616";
+}
+
+.j-remembrance-chrysanthemum:before {
+	content: "\e617";
+}
+
+.j-remembrance-ribbon:before {
+	content: "\e618";
+}
+
+.j-remembrance-ribbon-thick:before {
+	content: "\e619";
+}
+
+.j-digital-rights-base-station:before {
+	content: "\e61a";
+}
+
+.j-digital-rights-dna:before {
+	content: "\e61b";
+}
+
+.j-digital-rights-dna-v:before {
+	content: "\e61c";
+}
+
+.j-digital-rights-fingerprint:before {
+	content: "\e61d";
+}
+
+.j-digital-rights-fingerprint-identification:before {
+	content: "\e61e";
+}
+
+.j-digital-rights-id-card:before {
+	content: "\e61f";
+}
+
+.j-digital-rights-net-neutrality:before {
+	content: "\e620";
+}
+
+.j-digital-rights-passport:before {
+	content: "\e621";
+}
+
+.j-digital-rights-tag-identification:before {
+	content: "\e622";
+}
+
+.j-logos-hosting:before {
+	content: "\e623";
+}
+
+.j-logos-jinbonet:before {
+	content: "\e624";
+}
+
+.j-logos-jinbonet-en:before {
+	content: "\e625";
+}
+
+.j-logos-jinbonet-full:before {
+	content: "\e626";
+}
+
+.j-logos-jinbonet-kr:before {
+	content: "\e627";
+}
+
+.j-logos-jinbonet-thin:before {
+	content: "\e628";
+}
+
+.j-logos-mailinglist:before {
+	content: "\e629";
+}
+
+.j-logos-socialfunch:before {
+	content: "\e62a";
+}
+
+.j-logos-socialfunch-fist:before {
+	content: "\e62b";
+}
+
+.j-logos-taogi:before {
+	content: "\e62c";
+}
+
+.j-logos-taogi-en:before {
+	content: "\e62d";
+}
+
+.j-logos-taogi-kr:before {
+	content: "\e62e";
+}
+
+.j-chrome:before {
+	content: "\eae5";
+}
+
+.j-firefox:before {
+	content: "\eae6";
+}
+
+.j-IE:before {
+	content: "\eae7";
+}
+
+.j-opera:before {
+	content: "\eae8";
+}
+
+.j-safari:before {
+	content: "\eae9";
+}
+

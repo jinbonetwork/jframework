@@ -1,16 +1,8 @@
-//-----------------------------------------------------------------------------
-//	normalize.css
-//-----------------------------------------------------------------------------
-@import "../contrib/normalize.css/3.0.3/normalize.css";
+@import "./_config.less";
 
 //-----------------------------------------------------------------------------
-//	bootstrap
+//	rest of bootstrap
 //-----------------------------------------------------------------------------
-// Core variables and mixins
-@import "../contrib/bootstrap/3.3.4/less/variables.less";
-@import "./_config";
-@import "../contrib/bootstrap/3.3.4/less/mixins.less";
-
 // Reset and dependencies
 //@import "../contrib/bootstrap/3.3.4/less/normalize.less";
 //@import "../contrib/bootstrap/3.3.4/less/print.less";
@@ -28,8 +20,8 @@
 // Components
 @import "../contrib/bootstrap/3.3.4/less/component-animations.less";
 //@import "../contrib/bootstrap/3.3.4/less/dropdowns.less";
-//@import "../contrib/bootstrap/3.3.4/less/button-groups.less";
-//@import "../contrib/bootstrap/3.3.4/less/input-groups.less";
+@import "../contrib/bootstrap/3.3.4/less/button-groups.less";
+@import "../contrib/bootstrap/3.3.4/less/input-groups.less";
 //@import "../contrib/bootstrap/3.3.4/less/navs.less";
 //@import "../contrib/bootstrap/3.3.4/less/navbar.less";
 //@import "../contrib/bootstrap/3.3.4/less/breadcrumbs.less";
@@ -58,25 +50,9 @@
 @import "../contrib/bootstrap/3.3.4/less/utilities.less";
 @import "../contrib/bootstrap/3.3.4/less/responsive-utilities.less";
 
-//-----------------------------------------------------------------------------
-//	font-awesome
-//-----------------------------------------------------------------------------
-@import "../contrib/font-awesome/4.3.0/css/font-awesome.min.css";
-
-//-----------------------------------------------------------------------------
-//	webfonts
-//-----------------------------------------------------------------------------
-@import "../contrib/webfonts/2015.01.14/style.css";
-
-//-----------------------------------------------------------------------------
-//	Jframework
-//-----------------------------------------------------------------------------
-/// variables
-@color: #000000;
-@link: #4183C4;
-
-/// components
-@import "./_icons";
-@import "./_html";
-@import "./_typo";
+// jFramwork components
+@import "./_bootstrap.less";
+@import "./_icons.less";
+@import "./_html.less";
+@import "./_typo.less";
 @import "./_forms";

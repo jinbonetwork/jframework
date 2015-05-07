@@ -1,17 +1,42 @@
 {
+	"jquery":{
+		"js":["contrib/jquery/1.11.2/jquery-1.11.2.min.js"],
+		"css":[],
+		"priority":"-999999999",
+		"deps":[
+			"html5shiv",
+			"mobile-detect.js"
+		]
+	},
 	"jframework-fallback":{
 		"js":["js/fallback.js"],
 		"css":["css/fallback.css"],
 		"priority":"-999999999",
 		"deps":[
 			"respond",
-			"jquery"
+			"jquery",
+			"js-cookie",
+			"fancybox"
 		]
 	},
 	"jframework":{
-		"js":["js/script.js"],
+		"js":[
+			"contrib/bootstrap/3.3.4/dist/js/bootstrap.min.js",
+			"js/bootstrap.js",
+			"js/regheight.js",
+			"js/script.js"
+		],
 		"css":["css/style.css"],
 		"priority":"-999999999",
-		"deps":["jframework-fallback"]
+		"deps":[
+			"jquery",
+			"jframework-fallback"
+		]
+	},
+	"swiper":{
+		"js":["contrib/swiper/2.7.6/dist/idangerous.swiper.min.js"],
+		"css":["contrib/swiper/2.7.6/dist/idangerous.swiper.css"],
+		"priority":"-999999999",
+		"deps":["jquery"]
 	}
 }
