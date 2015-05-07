@@ -33,12 +33,12 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #337ab7;
+  color: #72bfba;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #23527c;
+  color: #479d98;
   text-decoration: underline;
 }
 a:focus {
@@ -107,39 +107,39 @@ hr {
 .container {
   margin-right: auto;
   margin-left: auto;
-  padding-left: 0px;
-  padding-right: 0px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 @media (min-width: 768px) {
   .container {
-    width: 720px;
+    width: 750px;
   }
 }
 @media (min-width: 992px) {
   .container {
-    width: 940px;
+    width: 970px;
   }
 }
 @media (min-width: 1200px) {
   .container {
-    width: 1140px;
+    width: 1170px;
   }
 }
 .container-fluid {
   margin-right: auto;
   margin-left: auto;
-  padding-left: 0px;
-  padding-right: 0px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .row {
-  margin-left: 0px;
-  margin-right: 0px;
+  margin-left: -15px;
+  margin-right: -15px;
 }
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
-  padding-left: 0px;
-  padding-right: 0px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left;
@@ -1251,8 +1251,8 @@ select[multiple].form-group-lg .form-control {
   min-height: 27px;
 }
 .form-horizontal .form-group {
-  margin-left: 0px;
-  margin-right: 0px;
+  margin-left: -15px;
+  margin-right: -15px;
 }
 @media (min-width: 768px) {
   .form-horizontal .control-label {
@@ -1262,7 +1262,7 @@ select[multiple].form-group-lg .form-control {
   }
 }
 .form-horizontal .has-feedback .form-control-feedback {
-  right: 0px;
+  right: 15px;
 }
 @media (min-width: 768px) {
   .form-horizontal .form-group-lg .control-label {
@@ -1374,8 +1374,8 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary {
   color: #ffffff;
-  background-color: #337ab7;
-  border-color: #2e6da4;
+  background-color: #72bfba;
+  border-color: #60b7b1;
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -1384,8 +1384,8 @@ fieldset[disabled] .btn-default.active {
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
   color: #ffffff;
-  background-color: #286090;
-  border-color: #204d74;
+  background-color: #4fafa9;
+  border-color: #449691;
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -1410,11 +1410,11 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-  background-color: #337ab7;
-  border-color: #2e6da4;
+  background-color: #72bfba;
+  border-color: #60b7b1;
 }
 .btn-primary .badge {
-  color: #337ab7;
+  color: #72bfba;
   background-color: #ffffff;
 }
 .btn-success {
@@ -1598,7 +1598,7 @@ fieldset[disabled] .btn-danger.active {
   background-color: #ffffff;
 }
 .btn-link {
-  color: #337ab7;
+  color: #72bfba;
   font-weight: normal;
   border-radius: 0;
 }
@@ -1619,7 +1619,7 @@ fieldset[disabled] .btn-link {
 }
 .btn-link:hover,
 .btn-link:focus {
-  color: #23527c;
+  color: #479d98;
   text-decoration: underline;
   background-color: transparent;
 }
@@ -2465,19 +2465,19 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .tooltip.primary .tooltip-inner {
-  background-color: #337ab7;
+  background-color: #72bfba;
 }
 .tooltip.primary.top .tooltip-arrow {
-  border-top-color: #337ab7;
+  border-top-color: #72bfba;
 }
 .tooltip.primary.right .tooltip-arrow {
-  border-right-color: #337ab7;
+  border-right-color: #72bfba;
 }
 .tooltip.primary.bottom .tooltip-arrow {
-  border-bottom-color: #337ab7;
+  border-bottom-color: #72bfba;
 }
 .tooltip.primary.left .tooltip-arrow {
-  border-left-color: #337ab7;
+  border-left-color: #72bfba;
 }
 .tooltip.success .tooltip-inner {
   background-color: #5cb85c;
