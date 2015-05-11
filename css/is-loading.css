@@ -1,7 +1,3 @@
-@import "../contrib/normalize.css/3.0.3/normalize.css";
-@import "../contrib/font-awesome/4.3.0/css/font-awesome.min.css";
-@import "../contrib/webfonts/2015.01.14/style.css";
-@import "../fonts/style.css";
 .isloading-overlay {
   position: relative;
 }

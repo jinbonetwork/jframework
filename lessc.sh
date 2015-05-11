@@ -1,3 +1,4 @@
+lessc less/bootstrap.less > css/bootstrap.css
 lessc less/jquery-ui.less > css/jquery-ui.css
 lessc less/is-loading.less > css/is-loading.css
 lessc less/fancybox.less > css/fancybox.css

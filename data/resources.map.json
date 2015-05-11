@@ -54,7 +54,7 @@
 		"deps":["jquery"]
 	},
 	"jquery-ui":{
-		"js":["contrib/jquery-ui/1.11.4/jquery-ui.min.js"],
+		"js":["contrib/jquery-ui/1.11.4_no-tooltip/jquery-ui.min.js"],
 		"css":["css/jquery-ui.css"],
 		"priority":"-999999999",
 		"deps":["jquery"]
@@ -107,16 +107,73 @@
 		"priority":"-999999999",
 		"deps":["jquery"]
 	},
-	"jframework":{
+	"normalize.css":{
+		"js":[],
+		"css":["contrib/normalize.css/3.0.3/normalize.css"],
+		"priority":"-999999999",
+		"deps":[]
+	},
+	"font-awesome":{
+		"js":[],
+		"css":["contrib/font-awesome/4.3.0/css/font-awesome.min.css"],
+		"priority":"-999999999",
+		"deps":[]
+	},
+	"webfonts":{
+		"js":[],
+		"css":["contrib/webfonts/2015.01.14/style.css"],
+		"priority":"-999999999",
+		"deps":[]
+	},
+	"bootstrap":{
 		"js":[
-			"contrib/bootstrap/3.3.4/dist/js/bootstrap.min.js",
+			"contrib/bootstrap/3.3.4/js/tooltip.js",
+			"js/bootstrap.js"
+		],
+		"css":["css/bootstrap.css"],
+		"priority":"-999999999",
+		"deps":["jquery"]
+	},
+	"jframework-package":{
+		"js":[
 			"js/jframework.js.php",
-			"js/bootstrap.js",
 			"js/regheight.js",
 			"js/script.js"
 		],
-		"css":["css/style.css"],
+		"css":[
+			"fonts/style.css",
+			"css/style.css"
+		],
 		"priority":"-999999999",
-		"deps":["jquery"]
+		"deps":[
+			"normalize.css",
+			"font-awesome",
+			"webfonts",
+			"jquery",
+			"bootstrap"
+		]
+	},
+	"jframework-fallback-prepend":{
+		"js":[],
+		"css":[],
+		"priority":"-999999999",
+		"deps":[
+			"jquery",
+			"respond",
+			"js-cookie",
+			"fancybox"
+		]
+	},
+	"jframework-fallback-append":{
+		"js":["js/fallback.js"],
+		"css":["css/fallback.css"],
+		"priority":"-999999999",
+		"deps":["jframework-package"]
+	},
+	"jframework":{
+		"js":[],
+		"css":[],
+		"priority":"-999999999",
+		"deps":["jframework-package"]
 	}
 }

@@ -36,10 +36,17 @@
 </head>
 <body>
 <div class="container">
-	<h1><i class="j-logos-jinbonet"></i> jFramework Test</h1>
-	<hr>
+
 	<div class="row">
-		<form class="col-md-6" style="box-sizing: border-box;padding-right: 20px;">
+		<div class="col-md-12">
+			<h1><i class="j-logos-jinbonet"></i> jFramework Test</h1>
+		</div>
+	</div>
+
+	<hr>
+
+	<div class="row">
+		<form class="col-md-6">
 			<h2>Forms</h2>
 			<div class="form-group has-feedback">
 				<label class="control-label" for="exampleTwitterID">Twitter</label>
@@ -75,40 +82,54 @@
 		</form>
 		<div class="col-md-6">
 			<div class="row">
-				<h2>jfLoading() & Alerts</h2>
-				<div class="is-loading-container">
+				<div class="col-md-12">
+					<h2>jfLoading() & Alerts</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 is-loading-container">
 					<div class="alert alert-info is-loading-console">Ready to load...</div>
 					<button class="btn is-loading-button" data-is-loading-position="inside" data-complete-label="Content loaded.">position: inside</button>
 				</div>
-				<div class="is-loading-container">
+			</div>
+			<div class="row">
+				<div class="col-md-12 is-loading-container">
 					<div class="alert alert-info is-loading-console">Ready to load...</div>
 					<button class="btn is-loading-button" data-is-loading-position="right" data-complete-label="Content loaded.">position: right (default)</button>
 				</div>
-				<div class="is-loading-container">
+			</div>
+			<div class="row">
+				<div class="col-md-12 is-loading-container">
 					<div class="alert alert-info is-loading-console">Ready to load...</div>
 					<button class="btn is-loading-button" data-is-loading-position="overlay" data-complete-label="Content loaded." data-class="ball-beat">position: overlay</button>
 				</div>
 			</div>
 		</div>
 	</div>
+
 	<hr>
+
 	<div class="row">
-		<h2>Buttons & Tooltips</h2>
 		<div class="col-md-12">
-			<button class="btn btn-default" data-toggle="tooltip" data-class="default" data-placement="top" data-title="(1) This is a dummy tooltip!">Top</button>
-			<button class="btn btn-primary" data-toggle="tooltip" data-class="primary" data-placement="right" data-title="(2) This is a dummy tooltip!">Right</button>
-			<button class="btn btn-success" data-toggle="tooltip" data-class="success" data-placement="bottom" data-title="(3) This is a dummy tooltip!">Bottom</button>
-			<button class="btn btn-info" data-toggle="tooltip" data-class="info" data-placement="left" data-title="(4) This is a dummy tooltip!">Left</button>
-			<button class="btn btn-warning" data-toggle="tooltip" data-class="warning" data-placement="top" data-title="(5) This is a dummy tooltip!">Top</button>
-			<button class="btn btn-danger" data-toggle="tooltip" data-class="danger" data-placement="right" data-title="(6) This is a dummy tooltip!">Right</button>
-			<button class="btn btn-link" data-toggle="tooltip" data-class="transparent" data-placement="bottom" data-title="(7) This is a dummy tooltip!">Bottom</button>
+			<h2>Buttons & Tooltips</h2>
+			<div class="buttons">
+				<button class="btn btn-default" data-toggle="tooltip" data-class="default" data-placement="top" data-title="(1) This is a dummy tooltip!">Top</button>
+				<button class="btn btn-primary" data-toggle="tooltip" data-class="primary" data-placement="right" data-title="(2) This is a dummy tooltip!">Right</button>
+				<button class="btn btn-success" data-toggle="tooltip" data-class="success" data-placement="bottom" data-title="(3) This is a dummy tooltip!">Bottom</button>
+				<button class="btn btn-info" data-toggle="tooltip" data-class="info" data-placement="left" data-title="(4) This is a dummy tooltip!">Left</button>
+				<button class="btn btn-warning" data-toggle="tooltip" data-class="warning" data-placement="top" data-title="(5) This is a dummy tooltip!">Top</button>
+				<button class="btn btn-danger" data-toggle="tooltip" data-class="danger" data-placement="right" data-title="(6) This is a dummy tooltip!">Right</button>
+				<button class="btn btn-link" data-toggle="tooltip" data-class="transparent" data-placement="bottom" data-title="(7) This is a dummy tooltip!">Bottom</button>
+			</div>
 		</div>
 	</div>
+	<hr>
+</div>
 
-	<nav id="jgm">
-		<div class="container">
-			<h2>Global Menu</h2>
-			<div class="row">
+
+<nav id="jgm" class="container">
+	<h2>Global Menu</h2>
+	<div class="row">
 <?php
 	function walk($data){
 		$markup = array();
@@ -133,9 +154,8 @@
 	$data = json_decode(file_get_contents(dirname(__FILE__).'/../data/jgm.json'),true);
 	echo walk($data);
 ?>
-			</div>
 		</div>
-	</nav>
-</div>
+	</div>
+</nav>
 </body>
 </html>
