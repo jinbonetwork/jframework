@@ -1,7 +1,7 @@
 @import "./_config.less";
 
 //-----------------------------------------------------------------------------
-//	rest of bootstrap
+//	Rest of bootstrap
 //-----------------------------------------------------------------------------
 // Reset and dependencies
 //@import "../contrib/bootstrap/3.3.4/less/normalize.less";
@@ -56,3 +56,20 @@
 @import "./_html.less";
 @import "./_typo.less";
 @import "./_forms";
+
+//-----------------------------------------------------------------------------
+//	Override
+//-----------------------------------------------------------------------------
+[data-height-mode] {
+	padding-left: 0;
+	padding-right: 0;
+	&.row,
+	.row {
+		margin-left: 0;
+		margin-right: 0;
+		[class^="col-"] {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}
