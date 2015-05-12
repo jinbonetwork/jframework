@@ -2,25 +2,19 @@
 <html>
 <head>
 	<meta charset="utf-8">
-
-<?php
-	require_once dirname(__FILE__).'/../jframework.php';
-	JFResources::$force_fallback = true;
-	JFTemplates::printHead(array(
-		'is-loading',
-		'jframework',
-	));
-?>
-
-	<link rel="stylesheet" type="text/css" href="../test/style.less">
-	<script src="../js/resize.js"></script>
+	<script src="../contrib/jquery/2.1.3/jquery-2.1.3.min.js"></script>
+	<link rel="stylesheet" href="../contrib/bootstrap/3.3.4/dist/css/bootstrap.css">
 	<script src="../js/regheight.js"></script>
 	<script>
 		jQuery(document).ready(function(){
-			jQuery('div[data-height-mode]').resizeAny(function(element){
-				jQuery(element).regHeight();
-			});
+			resize();
 		});
+		jQuery(window).resize(function(){
+			resize();
+		});
+		function resize(){
+			jQuery('div[data-height-mode]').regHeight();
+		}
 	</script>
 	<style>
 		.color1 { background-color: #cccccc; }

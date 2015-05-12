@@ -2,17 +2,26 @@
 	var config;
 
 	$.fn.regHeight = function(userConfig){
-		core(this, userConfig);
+		var $this = this;
+		if(window.respond){ //IE8을 위해서는 respond.js가 필요하다.
+			var rspListen = setInterval(function(){
+				if(!window.respond.queue.length){
+					core($this, userConfig);
+					clearInterval(rspListen);
+				}
+			}, 10);
+		} else {
+			core($this, userConfig);
+		}
 	}
 
 	function core($this, userConfig){
 		//모든 컬럼의 높이값을 초기화.////
 		jQuery($this).each(function(){
 			jQuery(this).find('div[class^="col-"]').each(function(){
-				jQuery(this).css({height: '', width: '', marginLeft:'', marginRight: '', marginTop: '', marginBottom: ''});
+				jQuery(this).height('');
 			});
 		});
-
 
 		if(typeof(config) === 'undefined') config = getConfig(userConfig); 
 		var breakPoint = getBreakPoint();
@@ -28,7 +37,8 @@
 			if(mode == 'nounit'){
 				var ws = [];
 				for(var i = 0; i < cols.length; i++){
-					ws[i] = getWidth(cols[i]);
+					var rect = jQuery(cols[i])[0].getBoundingClientRect();
+					ws[i] = rect.right - rect.left;					
 				}
 				for(var i = 0; i < cols.length; i++){
 					var rh = getHeight(cols[i], breakPoint);
@@ -37,7 +47,8 @@
 					}
 				}
 			} else {
-				var uh = getUnitHeight(mode, getWidth(this));
+				var rect = jQuery(this)[0].getBoundingClientRect();
+				var uh = getUnitHeight(mode, rect.right - rect.left);
 				for(var i = 0; i < cols.length; i++){
 					var nh = getHeight(cols[i], breakPoint);
 					if(nh != false) { //data-height-*가 없는 컬럼(그룹)은 높이 규제를 하지 않는다.
@@ -73,59 +84,6 @@
 					}
 				}//for(j)
 			}//for(i)
-
-			//사이간격(gutter)를 넣기 ////
-			var gutter = jQuery(this).attr('data-gutter');
-			var items = [];
-			jQuery(this).find('div[class^="col-"]').each(function(){
-				var children = jQuery(this).find('div[class^="col-"]');
-				if(!children.length){
-					items.push(this);
-				}
-			});
-			if(!gutter) return;
-
-			for(var i = 0; i < items.length; i++){
-				var t = jQuery(items[i]).offset().top;
-				var num = 1;
-				for(var j = i+1; j < items.length; j++){
-					if(t == jQuery(items[j]).offset().top){
-						 num++;
-					}
-				}//for(j)
-				if(num <=1) continue;
-
-				var pc = jQuery(items[i]).parent().closest('div[class^="col-"]');
-				var ww;
-				var mr;
-				var gg;
-				if(pc.length){
-					var children = jQuery(pc).find('div[class^="col-"]');
-					var pml = parseFloat(jQuery(children[0]).css('marginLeft'));
-					var pmr = parseFloat(jQuery(children[0]).css('marginRight'));
-					ww = getWidth(pc);
-					mr = gutter - pml;
-					gg = (num-1)*gutter + pml + pmr;
-				} else {
-					ww = getWidth(jQuery(this));
-					mr = gutter;
-					gg = (num-1)*gutter;
-				}
-				var nww = ww - gg;
-				for(var j = i; j < items.length; j++){
-					if(t == jQuery(items[j]).offset().top){
-						var w = getWidth(items[j]);
-						var nw = w * nww / ww;
-						var ml = gutter - mr;
-						mr = w - ml - nw; 
-						jQuery(items[j]).outerWidth(nw);
-						jQuery(items[j]).css({marginLeft: ml+'px', marginRight: mr+'px'});
-						items.splice(j, 1); j--;
-					}
-				}//for(j)
-				i--;
-			}//for(i)
-
 		});//this.each
 	}
 		
@@ -188,10 +146,5 @@
 			else if(bp == 'sm') return getHeight(col, 'xs');
 			else if(bp == 'xs') return false;
 		}
-	}
-
-	function getWidth(obj){
-		var rect = jQuery(obj)[0].getBoundingClientRect();
-		return rect.right - rect.left;
 	}
 })(jQuery);
