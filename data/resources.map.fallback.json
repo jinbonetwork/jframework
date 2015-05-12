@@ -18,24 +18,13 @@
 		"deps":["jquery"]
 	},
 	"jframework":{
-		"js":[
-			"contrib/bootstrap/3.3.4/dist/js/bootstrap.min.js",
-			"js/jframework.js.php",
-			"js/bootstrap.js",
-			"js/regheight.js",
-			"js/script.js",
-			"js/fallback.js"
-		],
-		"css":[
-			"css/style.css",
-			"css/fallback.css"
-		],
+		"js":[],
+		"css":[],
 		"priority":"-999999999",
 		"deps":[
-			"respond",
-			"jquery",
-			"js-cookie",
-			"fancybox"
+			"jframework-fallback-prepend",
+			"jframework-package",
+			"jframework-fallback-append"
 		]
 	}
 }
