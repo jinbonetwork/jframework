@@ -66,7 +66,17 @@ jframework
 * data -- 설정 파일 및 각 라이브러리의 의존성을 명시한 map 파일. (json 형식)
 * test -- 개발용 샘플 모음.
 
-높이 조정 스크립트(regheight.js)의 사용
+resizeAny.js
+------------
+* 어떤 요소의 크기가 변했을 때 어떤 동작을 할 필요가 있을 때 사용한ㄷ.
+* 예
+```{.javascript}
+	jQuery('selector').resizeAny(function(element){
+		console.log(jQuery(element).widht());
+	});
+```
+
+높이 조정 스크립트: regheight.js
 ------------------------------
 * 사용
 	* jQuery(_선택자_).regHeight(_user config_);
@@ -84,14 +94,10 @@ jframework
 	* 예
 	```{.javascript}
 		jQuery(document).ready(function(){
-			resize();
+			jQuery('div[data-height-mode]').resizeAny(function(element){
+				jQuery(element).regHeight();
+			});
 		});
-		jQuery(window).resize(function(){
-			resize();
-		});
-		function resize(){
-			jQuery('div[data-height-mode]').regHeight();
-		}
 	```
 * 어트리뷰트
 	* data-height-mode: 높이 조정의 모드를 결정한다.
@@ -115,9 +121,13 @@ jframework
 			* data-height-sm="2"
 			* data-height-xs="0.5"
 			* data-height-lg="1/2"
+	* data-gutter: 사이간격을 픽셀 단위로 설정한다.
+		* 섹션(최상위 그룹)에서 사용한다.
+		* 예
+			* data-gutter="10"
 	* 예
 	```{.html}
-		<div class="row" data-height-mode="nounit">
+		<div class="row" data-height-mode="nounit" data-gutter="10">
 			<div class="col-xs-12 col-md-3" data-height-xs="1/6" data-height-md="2"></div>
 			<div class="col-xs-12 col-md-6">
 				<div class="row">
