@@ -125,6 +125,12 @@
 		"priority":"-999999999",
 		"deps":[]
 	},
+	"notosans-subset":{
+		"js":[],
+		"css":["contrib/notosans-subset/2015.05.13/style.css"],
+		"priority":"-999999999",
+		"deps":[]
+	},
 	"bootstrap":{
 		"js":[
 			"contrib/bootstrap/3.3.4/js/tooltip.js",
@@ -148,7 +154,6 @@
 		"deps":[
 			"normalize.css",
 			"font-awesome",
-			"webfonts",
 			"jquery",
 			"bootstrap"
 		]
