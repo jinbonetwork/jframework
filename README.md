@@ -68,7 +68,7 @@ jframework
 
 resizeAny.js
 ------------
-* 어떤 요소의 크기가 변했을 때 어떤 동작을 할 필요가 있을 때 사용한ㄷ.
+* 어떤 요소의 크기가 변했을 때 어떤 동작을 할 필요가 있을 때 사용한다.
 * 예
 ```{.javascript}
 	jQuery('selector').resizeAny(function(element){
