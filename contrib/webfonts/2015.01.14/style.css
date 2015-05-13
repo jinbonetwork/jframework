@@ -1,29 +1,35 @@
  @font-face {
-    font-family: 'NanumBarunGothic';
-    font-weight: normal;
-    font-style: normal;
-    src: url('https://github.com/singihae/Webfonts/blob/master/NanumBarunGothic.eot');
-    src: url('https://github.com/singihae/Webfonts/blob/master/NanumBarunGothic.eot?#iefix') format('embedded-opentype'),
-         url('https://github.com/singihae/Webfonts/blob/master/NanumBarunGothic.woff') format('woff'),
-	url('https://github.com/singihae/Webfonts/blob/master/NanumBarunGothic.svg#NanumBarunGothic') format('svg'),
-        url('https://github.com/singihae/Webfonts/blob/master/NanumBarunGothic.ttf') format('truetype');
+		font-family: 'NanumBarunGothic';
+		font-weight: normal;
+		font-style: normal;
+		src: url('https://github.com/singihae/Webfonts/blob/master/NanumBarunGothic.eot');
+		src:
+			local('NanumBarunGothic'),
+			url('https://github.com/singihae/Webfonts/blob/master/NanumBarunGothic.eot?#iefix') format('embedded-opentype'),
+			url('https://github.com/singihae/Webfonts/blob/master/NanumBarunGothic.woff') format('woff'),
+			url('https://github.com/singihae/Webfonts/blob/master/NanumBarunGothic.svg#NanumBarunGothic') format('svg'),
+			url('https://github.com/singihae/Webfonts/blob/master/NanumBarunGothic.ttf') format('truetype');
 }
 @font-face {
-    font-family: 'NanumBarunGothicBold';
-    font-weight: 700;
-    font-style: normal;
-    src: url('https://github.com/singihae/Webfonts/blob/master/NanumBarunGothicBold.eot');
-    src: url('https://github.com/singihae/Webfonts/blob/master/NanumBarunGothicBold.eot?#iefix') format('embedded-opentype'),
-         url('https://github.com/singihae/Webfonts/blob/master/NanumBarunGothicBold.woff') format('woff'),
-         url('https://github.com/singihae/Webfonts/blob/master/NanumBarunGothicBold.svg#NanumBarunGothicBold') format('svg'),
-         url('https://github.com/singihae/Webfonts/blob/master/NanumBarunGothicBold.ttf') format('truetype');
+		font-family: 'NanumBarunGothicBold';
+		font-weight: 700;
+		font-style: normal;
+		src: url('https://github.com/singihae/Webfonts/blob/master/NanumBarunGothicBold.eot');
+		src:
+			local('NanumBarunGothicBold'),
+			url('https://github.com/singihae/Webfonts/blob/master/NanumBarunGothicBold.eot?#iefix') format('embedded-opentype'),
+			url('https://github.com/singihae/Webfonts/blob/master/NanumBarunGothicBold.woff') format('woff'),
+			url('https://github.com/singihae/Webfonts/blob/master/NanumBarunGothicBold.svg#NanumBarunGothicBold') format('svg'),
+			url('https://github.com/singihae/Webfonts/blob/master/NanumBarunGothicBold.ttf') format('truetype');
 }
 @font-face {
 	font-family: 'BM JUA';
 	font-weight: normal;
 	font-style: normal;
 	src: url('https://github.com/singihae/Webfonts/blob/master/BM-JUA.eot');
-	src: url('https://github.com/singihae/Webfonts/blob/master/BM-JUA.eot?#iefix') format('embedded-opentype'),
+	src:
+		local('');
+		url('https://github.com/singihae/Webfonts/blob/master/BM-JUA.eot?#iefix') format('embedded-opentype'),
 		url('https://github.com/singihae/Webfonts/blob/master/BM-JUA.woff') format('woff'),
 		url('https://github.com/singihae/Webfonts/blob/master/BM-JUA.svg#BM-JUA') format('svg'),
 		url('https://github.com/singihae/Webfonts/blob/master/BM-JUA.ttf') format('truetype');
@@ -33,8 +39,10 @@
 	font-weight: normal;
 	font-style: normal;
 	src: url('https://github.com/singihae/Webfonts/blob/master/BM-HANNA.eot');
-	src: url('https://github.com/singihae/Webfonts/blob/master/BM-HANNA.eot?#iefix') format('embedded-opentype'),
-	        url('https://github.com/singihae/Webfonts/blob/master/BM-HANNA.woff') format('woff'),
-	        url('https://github.com/singihae/Webfonts/blob/master/BM-HANNA.svg#BM-HANNA') format('svg'),
-	        url('https://github.com/singihae/Webfonts/blob/master/BM-HANNA.ttf') format('truetype');
+	src:
+		local(''),
+ 		url('https://github.com/singihae/Webfonts/blob/master/BM-HANNA.eot?#iefix') format('embedded-opentype'),
+		url('https://github.com/singihae/Webfonts/blob/master/BM-HANNA.woff') format('woff'),
+		url('https://github.com/singihae/Webfonts/blob/master/BM-HANNA.svg#BM-HANNA') format('svg'),
+		url('https://github.com/singihae/Webfonts/blob/master/BM-HANNA.ttf') format('truetype');
 }
