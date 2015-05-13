@@ -2,7 +2,7 @@
 	var elements = [];
 	$.fn.resizeAny = function(callback){
 		this.each(function(index){
-			if(!elements[index]){
+			if(elements[index] === undefined){
 				elements[index] = {width: jQuery(this).width(), height: jQuery(this).height()};
 				callback(this);
 			} else {
@@ -16,7 +16,6 @@
 			}
 		});
 		var $this = this;
-		setTimeout(function(){ jQuery($this).resizeAny(callback); }, 100);
-		
+		setTimeout(function(){ jQuery($this).resizeAny(callback); }, 200);
 	}
 })(jQuery);

@@ -2,25 +2,31 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<script src="../contrib/jquery/2.1.3/jquery-2.1.3.min.js"></script>
-	<link rel="stylesheet" href="../contrib/bootstrap/3.3.4/dist/css/bootstrap.css">
+
+<?php
+	require_once dirname(__FILE__).'/../jframework.php';
+	JFResources::$force_fallback = true;
+	JFTemplates::printHead(array(
+		'is-loading',
+		'jframework',
+	));
+?>
+
+	<link rel="stylesheet" type="text/css" href="../test/style.less">
+	<script src="../js/resizeAny.js"></script>
 	<script src="../js/regheight.js"></script>
 	<script>
 		jQuery(document).ready(function(){
-			resize();
+			jQuery('div[data-height-mode]').resizeAny(function(element){
+				jQuery(element).regHeight();
+			});
 		});
-		jQuery(window).resize(function(){
-			resize();
-		});
-		function resize(){
-			jQuery('div[data-height-mode]').regHeight();
-		}
 	</script>
 	<style>
-		.color1 { background-color: #cccccc; }
-		.color2 { background-color: #ff8822; }
+		.color1 { border: solid 3px #000000; background-color: #cccccc; }
+		.color2 { border-radius: 15px;  background-color: #ff8822; }
 		.color3 { background-color: #2288ff; }
-		.color4 { background-color: #ff0000; }
+		.color4 { border: solid 3px #000000; background-color: #ff0000; }
 		.color5 { background-color: #aabbff; }
 	</style>
 </head>
@@ -35,8 +41,7 @@
 				<div class="col-xs-12 color2" data-height-xs="1/6" data-height-md="1/2">2.<br>어린이집 CCTV - 어린이집 보육교사가 감시받지 않는 것이 아기들한테 좋당께?!</div>
 			</div>
 			<div class="row">
-				<div class="col-xs-12 col-sm-6 color3" data-height-xs="1/6" data-height-sm="1/2" data-height-md="1">3.<br>홈플러스 개인정보 유출: 내 정보가 유출됐는지 안됐는지 갈쳐주지도 않고.</div>
-				<div class="col-xs-12 col-sm-6 color4" data-height-xs="1/6" data-height-sm="1/2" data-height-md="1">4.<br>노동자 DNA 채취</div>
+				<div class="col-xs-12 color3" data-height-xs="1/6" data-height-md="1/2">3.<br>홈플러스 개인정보 유출: 내 정보가 유출됐는지 안됐는지 갈쳐주지도 않고.</div>
 			</div>
 		</div>
 		<div class="col-xs-12 col-md-3 color5" data-height-xs="1/6" data-height-md="2">5.<br>사이버 사찰 금지법</div>

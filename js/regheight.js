@@ -13,7 +13,6 @@
 			});
 		});
 
-
 		if(typeof(config) === 'undefined') config = getConfig(userConfig); 
 		var breakPoint = getBreakPoint();
 
@@ -28,20 +27,20 @@
 			if(mode == 'nounit'){
 				var ws = [];
 				for(var i = 0; i < cols.length; i++){
-					ws[i] = getWidth(cols[i]);
+					ws[i] = getRectWidth(cols[i]);
 				}
 				for(var i = 0; i < cols.length; i++){
 					var rh = getHeight(cols[i], breakPoint);
 					if(rh != false) {//data-height-*가 없는 컬럼(그룹)은 높이 규제를 하지 않는다.
-						jQuery(cols[i]).height(Math.ceil(ws[i] * rh));
+						jQuery(cols[i]).outerHeight(Math.ceil(ws[i] * rh));
 					}
 				}
 			} else {
-				var uh = getUnitHeight(mode, getWidth(this));
+				var uh = getUnitHeight(mode, getRectWidth(this));
 				for(var i = 0; i < cols.length; i++){
 					var nh = getHeight(cols[i], breakPoint);
 					if(nh != false) { //data-height-*가 없는 컬럼(그룹)은 높이 규제를 하지 않는다.
-						jQuery(cols[i]).height(Math.ceil(uh * nh));
+						jQuery(cols[i]).outerHeight(Math.ceil(uh * nh));
 					}
 				}
 			}
@@ -54,10 +53,10 @@
 			var diff = 4; //같은 높이를 가져야 하는 컬럼들 사이의 높이의 최대 차이.
 			for(var i = 0; i < cols.length; i++){
 				var t = jQuery(cols[i]).offset().top;
-				var maxh = jQuery(cols[i]).height();
+				var maxh = jQuery(cols[i]).outerHeight();
 				for(var j = i+1; j < cols.length; j++){
 					if(t == jQuery(cols[j]).offset().top){
-						var nh = jQuery(cols[j]).height();
+						var nh = jQuery(cols[j]).outerHeight();
 						if(maxh < nh && nh - maxh <= diff){
 							maxh = nh;
 						}
@@ -65,9 +64,9 @@
 				}//for(j)
 				for(var j = i; j < cols.length; j++){
 					if(t == jQuery(cols[j]).offset().top){
-						var h = jQuery(cols[j]).height();
+						var h = jQuery(cols[j]).outerHeight();
 						if(h <= maxh && maxh - h <= diff){
-							 jQuery(cols[j]).height(maxh);
+							 jQuery(cols[j]).outerHeight(maxh);
 							 cols.splice(j, 1); j--;
 						}
 					}
@@ -75,7 +74,11 @@
 			}//for(i)
 
 			//사이간격(gutter)를 넣기 ////
+			//표처럼 모든 컬럼을 배치했을 때, 아귀고 맞고, 직사각형을 형성한다고 가정한다.
 			var gutter = jQuery(this).attr('data-gutter');
+			if(!gutter) return;
+			gutter = parseFloat(gutter);
+
 			var items = [];
 			jQuery(this).find('div[class^="col-"]').each(function(){
 				var children = jQuery(this).find('div[class^="col-"]');
@@ -83,48 +86,83 @@
 					items.push(this);
 				}
 			});
-			if(!gutter) return;
+		
+			var cbls = [];
+			cbls[0] = jQuery(items[0]).offset().left;
+			for(var i = 1; i < items.length; i++){
+				var l = jQuery(items[i]).offset().left;
+				var isDouble = false;
+				for(var j = 0; j < i; j++){
+					if(l == cbls[j]){ isDouble = true; break; }
+				}
+				if(!isDouble) cbls.push(l);
+			}
+			cbls.push(jQuery(this).offset().left + getRectWidth(this));
+
+			var ww = getRectWidth(this);
+			var nww = ww - (cbls.length-2)*gutter;
+			var leftbls = [];
+			for(var i = 0; i < cbls.length-2; i++){
+				var w = cbls[i+1] - cbls[i];
+				var nw = w * nww / ww;
+				if(i == 0) leftbls[i] = cbls[0] + nw;
+				else leftbls[i] = leftbls[i-1] + gutter + nw;
+			}
 
 			for(var i = 0; i < items.length; i++){
-				var t = jQuery(items[i]).offset().top;
-				var num = 1;
-				for(var j = i+1; j < items.length; j++){
-					if(t == jQuery(items[j]).offset().top){
-						 num++;
-					}
+				var w = getRectWidth(items[i]);
+				var left = jQuery(items[i]).offset().left;
+				var right = left + w;
+				var ml = 0, mr = 0;
+				for(var j = 0; j < leftbls.length; j++){
+					if(leftbls[j] <= left && left <= leftbls[j] + gutter)
+						ml = leftbls[j] + gutter - left;
+					if(leftbls[j] <= right && right <= leftbls[j] + gutter)
+						mr = right - leftbls[j];
 				}//for(j)
-				if(num <=1) continue;
-
-				var pc = jQuery(items[i]).parent().closest('div[class^="col-"]');
-				var ww;
-				var mr;
-				var gg;
-				if(pc.length){
-					var children = jQuery(pc).find('div[class^="col-"]');
-					var pml = parseFloat(jQuery(children[0]).css('marginLeft'));
-					var pmr = parseFloat(jQuery(children[0]).css('marginRight'));
-					ww = getWidth(pc);
-					mr = gutter - pml;
-					gg = (num-1)*gutter + pml + pmr;
-				} else {
-					ww = getWidth(jQuery(this));
-					mr = gutter;
-					gg = (num-1)*gutter;
-				}
-				var nww = ww - gg;
-				for(var j = i; j < items.length; j++){
-					if(t == jQuery(items[j]).offset().top){
-						var w = getWidth(items[j]);
-						var nw = w * nww / ww;
-						var ml = gutter - mr;
-						mr = w - ml - nw; 
-						jQuery(items[j]).outerWidth(nw);
-						jQuery(items[j]).css({marginLeft: ml+'px', marginRight: mr+'px'});
-						items.splice(j, 1); j--;
-					}
-				}//for(j)
-				i--;
+				w = w - ml - mr;
+				jQuery(items[i]).outerWidth(w);
+				jQuery(items[i]).css({marginLeft: ml, marginRight: mr});
 			}//for(i)
+
+			var rbls = [];
+			rbls[0] = jQuery(items[0]).offset().top;
+			for(var i = 1; i < items.length; i++){
+				var t = jQuery(items[i]).offset().top;
+				var isDouble = false;
+				for(var j = 0; j < i; j++){
+					if(t == rbls[j]){ isDouble = true; break; }
+				}
+				if(!isDouble) rbls.push(t);
+			}
+			rbls.push(jQuery(this).offset().top + getRectHeight(this));
+
+			var hh = getRectHeight(this);
+			var nhh = hh - (rbls.length-2)*gutter;
+			var topbls = [];
+			for(var i = 0; i < rbls.length-2; i++){
+				var g = rbls[i+1] - rbls[i];
+				var nh = h * nhh / hh;
+				if(i == 0) topbls[i] = rbls[0] + nh;
+				else topbls[i] = topbls[i-1] + gutter + nh;
+			}
+
+			for(var i = 0; i < items.length; i++){
+				var h = getRectHeight(items[i]);
+				var top = jQuery(items[i]).offset().top;
+				var bottom = top + h;
+				var mt = 0, mb = 0;
+				for(var j = 0; j < topbls.length; j++){
+					if(topbls[j] <= top && top <= topbls[j] + gutter)
+						mt = topbls[j] + gutter - top;
+					if(topbls[j] <= bottom && bottom <= topbls[j] + gutter)
+						mb = bottom - topbls[j];
+				}//for(j)
+				h = h - mt - mb;
+				jQuery(items[i]).outerHeight(h);
+				jQuery(items[i]).css({marginTop: mt, marginBottom: mb});
+			}//for(i)
+
 
 		});//this.each
 	}
@@ -190,8 +228,13 @@
 		}
 	}
 
-	function getWidth(obj){
+	function getRectWidth(obj){
 		var rect = jQuery(obj)[0].getBoundingClientRect();
 		return rect.right - rect.left;
 	}
+	function getRectHeight(obj){
+		var rect = jQuery(obj)[0].getBoundingClientRect();
+		return rect.bottom - rect.top;
+	}
+
 })(jQuery);
