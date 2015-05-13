@@ -143,6 +143,7 @@
 	"jframework-package":{
 		"js":[
 			"js/jframework.js.php",
+			"js/resizeAny.js",
 			"js/regheight.js",
 			"js/script.js"
 		],
