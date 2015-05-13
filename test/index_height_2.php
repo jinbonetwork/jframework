@@ -34,7 +34,7 @@
 
 <div class="container-fluid">
 	<!-- non-unit 모드 사용 -->
-	<div class="row" data-height-mode="nounit" data-gutter="10" >
+	<div class="row" data-height-mode="nounit" data-gutter="10">
 		<div class="col-xs-12 col-md-3 color1" data-height-xs="1/6" data-height-md="2">1.<br>내용없음</div>
 		<div class="col-xs-12 col-md-6">
 			<div class="row">

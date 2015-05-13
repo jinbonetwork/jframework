@@ -15,22 +15,20 @@
 
 		if(typeof(config) === 'undefined') config = getConfig(userConfig); 
 		var breakPoint = getBreakPoint();
-
-		//브레이크 포인트가 xs보다 작으면 높이를 규제하지 않는다.////
-		if(breakPoint == 'de') return;
+		if(breakPoint == 'de') return; //브레이크 포인트가 xs보다 작으면 높이를 규제하지 않는다.////
 
 		//컬럼의 높이를 규제한다. ////
 		jQuery($this).each(function(){
 			var cols = jQuery(this).find('div[class^="col-"]');
 			var mode = jQuery(this).attr('data-height-mode');
-
+			
 			if(mode == 'nounit'){
 				var ws = [];
 				for(var i = 0; i < cols.length; i++){
 					ws[i] = getRectWidth(cols[i]);
 				}
 				for(var i = 0; i < cols.length; i++){
-					var rh = getHeight(cols[i], breakPoint);
+					var rh = getDataHeight(cols[i], breakPoint);
 					if(rh != false) {//data-height-*가 없는 컬럼(그룹)은 높이 규제를 하지 않는다.
 						jQuery(cols[i]).outerHeight(Math.ceil(ws[i] * rh));
 					}
@@ -38,7 +36,7 @@
 			} else {
 				var uh = getUnitHeight(mode, getRectWidth(this));
 				for(var i = 0; i < cols.length; i++){
-					var nh = getHeight(cols[i], breakPoint);
+					var nh = getDataHeight(cols[i], breakPoint);
 					if(nh != false) { //data-height-*가 없는 컬럼(그룹)은 높이 규제를 하지 않는다.
 						jQuery(cols[i]).outerHeight(Math.ceil(uh * nh));
 					}
@@ -124,7 +122,7 @@
 				jQuery(items[i]).outerWidth(w);
 				jQuery(items[i]).css({marginLeft: ml, marginRight: mr});
 			}//for(i)
-
+			
 			var rbls = [];
 			rbls[0] = jQuery(items[0]).offset().top;
 			for(var i = 1; i < items.length; i++){
@@ -141,7 +139,7 @@
 			var nhh = hh - (rbls.length-2)*gutter;
 			var topbls = [];
 			for(var i = 0; i < rbls.length-2; i++){
-				var g = rbls[i+1] - rbls[i];
+				var h = rbls[i+1] - rbls[i];
 				var nh = h * nhh / hh;
 				if(i == 0) topbls[i] = rbls[0] + nh;
 				else topbls[i] = topbls[i-1] + gutter + nh;
@@ -211,7 +209,7 @@
 			return uw * mode[0]; 
 	}
 
-	function getHeight(col, bp){
+	function getDataHeight(col, bp){
 		var h = jQuery(col).attr('data-height-' + bp);
 		if(h){
 			h = h.split('/');
@@ -221,9 +219,9 @@
 				return h[0];
 		}
 		else {
-			if(bp == 'lg') return getHeight(col, 'md');
-			else if(bp == 'md') return getHeight(col, 'sm');
-			else if(bp == 'sm') return getHeight(col, 'xs');
+			if(bp == 'lg') return getDataHeight(col, 'md');
+			else if(bp == 'md') return getDataHeight(col, 'sm');
+			else if(bp == 'sm') return getDataHeight(col, 'xs');
 			else if(bp == 'xs') return false;
 		}
 	}
