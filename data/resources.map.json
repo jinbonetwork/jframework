@@ -59,6 +59,12 @@
 		"priority":"-999999999",
 		"deps":["jquery"]
 	},
+	"jquery-easing":{
+		"js":["contrib/jquery.easing/jquery.easing.min.js"],
+		"css":[],
+		"priority":"-999999998",
+		"deps":["jquery"]
+	},
 	"fancybox":{
 		"js":[
 			"contrib/fancybox/2.1.5/lib/jquery.mousewheel-3.0.6.pack.js",
