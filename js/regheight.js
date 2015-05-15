@@ -135,7 +135,7 @@
 			}
 			rbls.push(jQuery(items[items.length-1]).offset().top + getRectHeight(items[items.length-1]));
 
-			var hh = rbls[rbls.length-1] - rbls[0]; console.log(hh);
+			var hh = rbls[rbls.length-1] - rbls[0];
 			var nhh = hh - (rbls.length-2)*gutter;
 			var topbls = [];
 			for(var i = 0; i < rbls.length-2; i++){
