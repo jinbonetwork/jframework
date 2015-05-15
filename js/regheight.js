@@ -95,9 +95,9 @@
 				}
 				if(!isDouble) cbls.push(l);
 			}
-			cbls.push(jQuery(this).offset().left + getRectWidth(this));
+			cbls.push(jQuery(items[items.length-1]).offset().left + getRectWidth(items[items.length-1]));
 
-			var ww = getRectWidth(this);
+			var ww = cbls[cbls.length-1] - cbls[0];
 			var nww = ww - (cbls.length-2)*gutter;
 			var leftbls = [];
 			for(var i = 0; i < cbls.length-2; i++){
@@ -133,9 +133,9 @@
 				}
 				if(!isDouble) rbls.push(t);
 			}
-			rbls.push(jQuery(this).offset().top + getRectHeight(this));
+			rbls.push(jQuery(items[items.length-1]).offset().top + getRectHeight(items[items.length-1]));
 
-			var hh = getRectHeight(this);
+			var hh = rbls[rbls.length-1] - rbls[0]; console.log(hh);
 			var nhh = hh - (rbls.length-2)*gutter;
 			var topbls = [];
 			for(var i = 0; i < rbls.length-2; i++){
@@ -192,12 +192,21 @@
 	}
 
 	function getBreakPoint(){
-		var screen = jQuery(window).outerWidth();
-		if(screen >= config.screen_lg_min) return 'lg';
-		else if(screen >= config.screen_md_min) return 'md';
-		else if(screen >= config.screen_sm_min) return 'sm';
-		else if(screen >= config.screen_xs_min) return 'xs';
-		else return 'de';
+		if(window.matchMedia('(min-width: 0px)').matches){
+			if(window.matchMedia('(min-width: '+config.screen_lg_min+'px)').matches) return 'lg';
+			else if(window.matchMedia('(min-width: '+config.screen_md_min+'px)').matches) return 'md';
+			else if(window.matchMedia('(min-width: '+config.screen_sm_min+'px)').matches) return 'sm';
+			else if(window.matchMedia('(min-width: '+config.screen_xs_min+'px)').matches) return 'xs';
+			else return 'de';
+		}
+		else {
+			var screen = jQuery(window).outerWidth();
+			if(screen >= config.screen_lg_min) return 'lg';
+			else if(screen >= config.screen_md_min) return 'md';
+			else if(screen >= config.screen_sm_min) return 'sm';
+			else if(screen >= config.screen_xs_min) return 'xs';
+			else return 'de';
+		}
 	}
 
 	function getUnitHeight(mode, w){
