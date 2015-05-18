@@ -84,6 +84,7 @@
 					items.push(this);
 				}
 			});
+			if(!items.length) return;
 		
 			var cbls = [];
 			cbls[0] = jQuery(items[0]).offset().left;
