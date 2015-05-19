@@ -77,17 +77,20 @@
 			if(!gutter) return;
 			gutter = parseFloat(gutter);
 
+			var $maxRow;
+			if(jQuery(this).hasClass('row')) $maxRow = jQuery(this);
+			else $maxRow = jQuery(jQuery(this).find('.row')[0]);
+
 			var items = [];
 			jQuery(this).find('div[class^="col-"]').each(function(){
-				var children = jQuery(this).find('div[class^="col-"]');
-				if(!children.length){
+				var desc = jQuery(this).find('div[class^="col-"]');
+				if(!desc.length){
 					items.push(this);
 				}
 			});
 			if(!items.length) return;
 		
-			var cbls = [];
-			cbls[0] = jQuery(items[0]).offset().left;
+			var cbls = []; cbls[0] = jQuery(items[0]).offset().left;
 			for(var i = 1; i < items.length; i++){
 				var l = jQuery(items[i]).offset().left;
 				var isDouble = false;
@@ -96,9 +99,9 @@
 				}
 				if(!isDouble) cbls.push(l);
 			}
-			cbls.push(jQuery(items[items.length-1]).offset().left + getRectWidth(items[items.length-1]));
+			cbls.push($maxRow.offset().left + getRectWidth($maxRow));
 
-			var ww = cbls[cbls.length-1] - cbls[0];
+			var ww = getRectWidth($maxRow);
 			var nww = ww - (cbls.length-2)*gutter;
 			var leftbls = [];
 			for(var i = 0; i < cbls.length-2; i++){
@@ -134,9 +137,9 @@
 				}
 				if(!isDouble) rbls.push(t);
 			}
-			rbls.push(jQuery(items[items.length-1]).offset().top + getRectHeight(items[items.length-1]));
-
-			var hh = rbls[rbls.length-1] - rbls[0];
+			rbls.push($maxRow.offset().top + getRectHeight($maxRow));
+			
+			var hh = getRectHeight($maxRow);
 			var nhh = hh - (rbls.length-2)*gutter;
 			var topbls = [];
 			for(var i = 0; i < rbls.length-2; i++){

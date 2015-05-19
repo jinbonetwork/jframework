@@ -32,9 +32,9 @@
 </head>
 <body>
 
-<div class="container-fluid">
+<div class="container-fluid" data-height-mode="1" data-gutter="10">
 	<!-- unit 모드 사용 -->
-	<div class="row" data-height-mode="1" data-gutter="10">
+	<div class="row">
 		<div class="col-xs-12 col-md-3 color1" data-height-xs="2" data-height-md="6">1.<br>내용없음</div>
 		<div class="col-xs-12 col-md-6">
 			<div class="row">
@@ -51,8 +51,10 @@
 		</div>
 		<div class="col-xs-12 col-md-3 color5" data-height-xs="2" data-height-md="6">5.<br>사이버 사찰 금지법</div>
 	</div>
+</div>
+<div class="container-fluid" >
 	<!-- non-unit 모드 사용 -->
-	<div class="row" data-height-mode="nounit" data-gutter="10" >
+	<div class="row" data-height-mode="nounit" data-gutter="10">
 		<div class="col-xs-12 col-md-3 color1" data-height-xs="1/6" data-height-md="2">1.<br>내용없음</div>
 		<div class="col-xs-12 col-md-6">
 			<div class="row">
