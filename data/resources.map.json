@@ -83,6 +83,12 @@
 		"priority":"-999999999",
 		"deps":["jquery"]
 	},
+	"imagefill.js":{
+		"js":["contrib/imagefill.js/2015.04.29/jquery-imagefill.js"],
+		"css":[],
+		"priority":"-999999999",
+		"deps":["imagesloaded"]
+	},
 	"loaders.css":{
 		"js":[],
 		"css":["contrib/loaders.css/0.1.1/loaders.min.css"],
@@ -113,8 +119,8 @@
 		"priority":"-999999999",
 		"deps":[]
 	},
-	"wow":{
-		"js":["contrib/wow/1.1.2/dist/wow.min.js"],
+	"wow.js":{
+		"js":["contrib/wow.js/1.1.2/dist/wow.min.js"],
 		"css":[],
 		"priority":"-999999999",
 		"deps":["animate.css"]

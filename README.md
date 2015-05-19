@@ -22,8 +22,16 @@ jframework
 			* 1.4.2
 		* [imagesloaded](http://imagesloaded.desandro.com/) -- (JS) 이미지가 실제로 로드됐을 때 사용자 함수를 실행하는 jQuery 플러그인.
 			* 3.1.8
+		* [imagefill.js](http://johnpolacek.github.io/imagefill.js/) -- (JS) 이미지가 부모 엘리먼트에 꽉 차도록 크기를 조정하는 jQuery 플러그인.
+			* 2015.04.29
 		* [swiper](http://www.idangero.us/swiper/) -- (JS, CSS) 슬라이드쇼를 생성하는 라이브러리. jQuery 플러그인 형식으로 사용함.
 			* 3.0.7
+		* [animate.css](http://daneden.github.io/animate.css) -- (CSS) CSS3 애니메이션 프리셋.
+			* 3.1.0
+		* [wow](http://mynameismatthieu.com/WOW/) -- (JS) 엘리먼트가 등장할 때 애니메이션을 적용하는 라이브러리.
+			* 1.1.2
+		* [skrollr](http://prinzhorn.github.io/skrollr/) -- (JS) 패럴랙스 애니메이션 라이브러리.
+			* 0.6.29
 	* 사용자화
 		* [jquery](http://jquery.com) -- (JS) 자바스크립트 프레임워크.
 			* 2.1.3 -- data/resources.map.json
