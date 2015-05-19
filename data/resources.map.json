@@ -107,6 +107,24 @@
 		"priority":"-999999999",
 		"deps":["jquery"]
 	},
+	"animate.css":{
+		"js":[],
+		"css":["contrib/animate.css/3.1.0/animate.min.css"],
+		"priority":"-999999999",
+		"deps":[]
+	},
+	"wow":{
+		"js":["contrib/wow/1.1.2/dist/wow.min.js"],
+		"css":[],
+		"priority":"-999999999",
+		"deps":["animate.css"]
+	},
+	"skrollr":{
+		"js":["contrib/skrollr/0.6.29/dist/skrollr.min.js"],
+		"css":[],
+		"priority":"-999999999",
+		"deps":[]
+	},
 	"normalize.css":{
 		"js":[],
 		"css":["contrib/normalize.css/3.0.3/normalize.css"],
