@@ -7,7 +7,7 @@ class JFResources extends JF {
 
 	public static $css = array();
 	public static $js = array();
-	private static $index = array();
+	public static $index = array();
 
 	function __construct() {
 	}
