@@ -8,6 +8,7 @@ class JFResources extends JF {
 	public static $css = array();
 	public static $js = array();
 	private static $index = array();
+	public static $exception = array();
 
 	function __construct() {
 	}
@@ -70,17 +71,19 @@ class JFResources extends JF {
 				}
 			}
 		}
-		if($index['options']) {
-			$options = $index['options'];
-		}
-		if($index['js'] && @count($index['js']) > 0) {
-			foreach($index['js'] as $js) {
-				self::addJsURI(JF_URI."/".$js,$priority,$options);
+		if(!in_array($key,self::$exception)){
+			if($index['options']) {
+				$options = $index['options'];
 			}
-		}
-		if($index['css'] && @count($index['css']) > 0) {
-			foreach($index['css'] as $css) {
-				self::addCssURI(JF_URI."/".$css,$priority,$options);
+			if($index['js'] && @count($index['js']) > 0) {
+				foreach($index['js'] as $js) {
+					self::addJsURI(JF_URI."/".$js,$priority,$options);
+				}
+			}
+			if($index['css'] && @count($index['css']) > 0) {
+				foreach($index['css'] as $css) {
+					self::addCssURI(JF_URI."/".$css,$priority,$options);
+				}
 			}
 		}
 		self::$index[$key]['loaded'] = true;
