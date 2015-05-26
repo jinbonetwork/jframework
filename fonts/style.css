@@ -67,6 +67,14 @@
 	content: "\e60a";
 }
 
+.j-misc-close-boxed:before {
+	content: "\e630";
+}
+
+.j-misc-list-boxed:before {
+	content: "\e62f";
+}
+
 .j-movement-candlelight:before {
 	content: "\e60b";
 }
@@ -209,6 +217,9 @@
 
 .j-logos-taogi-kr:before {
 	content: "\e62e";
+}
+.j-logos-blog:before {
+	content: "\e631";
 }
 
 .j-chrome:before {
