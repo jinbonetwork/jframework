@@ -32,6 +32,8 @@ jframework
 			* 1.1.2
 		* [skrollr](http://prinzhorn.github.io/skrollr/) -- (JS) 패럴랙스 애니메이션 라이브러리.
 			* 0.6.29
+		* [svg.js](http://svgjs.com/) -- (JS) SVG 객체를 다룰 수 있도록 도와주는 라이브러리.
+			* 1.0rc3
 	* 사용자화
 		* [jquery](http://jquery.com) -- (JS) 자바스크립트 프레임워크.
 			* 2.1.3 -- data/resources.map.json
