@@ -24,16 +24,17 @@
 	<svg id="test"></svg>
 
 	<script type="text/javascript">
-		var test = SVG('test').size(200,200);
+		var test = SVG('test').size(700,280);
 		var polygon = test.polygon('0,0 0,0 0,0 0,0');
-		var pattern = test.image('http://svgjs.com/images/shade.jpg');
-		pattern.size(650,650).y(-150);
+		var pattern = test.image('halftone_background.png');
+		pattern.size(700,300).y(0);
 		pattern.clipWith(polygon);
 		polygon.attr({
-			"data-0":"@points:		0,0			200,0		200,200	0,200",
-			"data-300":"@points:	100,0		200,100	100,200	0,100",
-			"data-600":"@points:	200,0		200,200	0,200		0,0",
-			"data-900":"@points:	200,100	100,200	0,100		100,0"
+			"data-0":"@points:		0,0			623,40		675,234		160,163",
+			"data-300":"@points:	146,0		692,20		643,198		8,273",
+			"data-600":"@points:	26,0		700,83		608,234		90,202",
+			"data-900":"@points:	289,120		456,148		325,172		223,132",
+			"data-1200":"@points:	350,140		350,140		350,140		350,140"
 		});
 
 		skrollr.init();
