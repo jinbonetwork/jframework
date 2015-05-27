@@ -131,6 +131,12 @@
 		"priority":"-999999999",
 		"deps":[]
 	},
+	"svg.js":{
+		"js":["contrib/svg.js/1.0rc3/dist/svg.min.js"],
+		"css":[],
+		"priority":"-999999999",
+		"deps":[]
+	},
 	"normalize.css":{
 		"js":[],
 		"css":["contrib/normalize.css/3.0.3/normalize.css"],

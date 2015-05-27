@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+<?php
+	require_once dirname(__FILE__).'/../jframework.php';
+	JFTemplates::printHead(array(
+		'svg.js',
+		'skrollr',
+	));
+?>
+	<title>SVG</title>
+	<style>
+		#test {
+			position: fixed;
+		}
+		.polygon-test {
+			fill: rgba(255,0,0,0.5);		
+		}
+	</style>
+</head>
+
+<body>
+	<svg id="test"></svg>
+
+	<script type="text/javascript">
+		var test = SVG('test').size(200,200);
+		var polygon = test.polygon('0,0 0,0 0,0 0,0');
+		var pattern = test.image('http://svgjs.com/images/shade.jpg');
+		pattern.size(650,650).y(-150);
+		pattern.clipWith(polygon);
+		polygon.attr({
+			"data-0":"@points:		0,0			200,0		200,200	0,200",
+			"data-300":"@points:	100,0		200,100	100,200	0,100",
+			"data-600":"@points:	200,0		200,200	0,200		0,0",
+			"data-900":"@points:	200,100	100,200	0,100		100,0"
+		});
+
+		skrollr.init();
+	</script>
+</body>
+
+</html>
+
