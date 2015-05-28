@@ -179,6 +179,7 @@
 		],
 		"css":[
 			"fonts/style.css",
+			"css/regheight.css",
 			"css/style.css"
 		],
 		"priority":"-999999999",
