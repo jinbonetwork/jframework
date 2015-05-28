@@ -7,11 +7,12 @@
 	JFTemplates::printHead(array(
 		'svg.js',
 		'skrollr',
+		'wow.js',
 	));
 ?>
 	<title>SVG</title>
 	<style>
-		#test {
+		.wow {
 			position: fixed;
 		}
 		.polygon-test {
@@ -21,7 +22,7 @@
 </head>
 
 <body>
-	<svg id="test"></svg>
+	<div class="wow bounceInUp"><svg id="test"></svg></div>
 
 	<script type="text/javascript">
 		var test = SVG('test').size(700,280);
@@ -37,7 +38,8 @@
 			"data-1200":"@points:	350,140		350,140		350,140		350,140"
 		});
 
-		skrollr.init();
+		var _skrollr = skrollr.init();
+		var _wow = new WOW().init();
 	</script>
 </body>
 
