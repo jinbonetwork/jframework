@@ -1,4 +1,34 @@
 (function($){
+	var elements = [];
+	$.fn.resizeAny = function(callback){
+		if(!elements.length){
+			 if(window.respond && window.respond.queue.length != 0){
+				var $this = this;
+				setTimeout(function(){ jQuery($this).resizeAny(callback); }, 50);
+				return;
+			}
+		}
+
+		this.each(function(index){
+			if(elements[index] === undefined){
+				elements[index] = {width: jQuery(this).width(), height: jQuery(this).height()};
+				callback(this);
+			} else {
+				var width = jQuery(this).width();
+				var height = jQuery(this).height();
+				if(width != elements[index].width || height != elements[index].height){
+					elements[index].width = width;
+					elements[index].height = height;
+					callback(this);
+				}
+			}
+		});
+		var $this = this;
+		setTimeout(function(){ jQuery($this).resizeAny(callback); }, 200);
+	}
+})(jQuery);
+
+(function($){
 	var config;
 
 	$.fn.regHeight = function(userConfig){
@@ -8,7 +38,7 @@
 	function core($this, userConfig){
 		//모든 컬럼의 높이값을 초기화.////
 		jQuery($this).each(function(){
-			jQuery(this).find('div[class^="col-"]').each(function(){
+			jQuery(this).find('div[class*="col-"]').each(function(){
 				jQuery(this).css({height: '', width: '', marginLeft:'', marginRight: '', marginTop: '', marginBottom: ''});
 			});
 		});
@@ -19,9 +49,14 @@
 
 		//컬럼의 높이를 규제한다. ////
 		jQuery($this).each(function(){
-			var cols = jQuery(this).find('div[class^="col-"]');
+			var cols = jQuery(this).find('div[class*="col-"]');
 			var mode = jQuery(this).attr('data-height-mode');
-			
+			var items = [];
+			for(var i = 0; i < cols.length; i++){
+				var desc = jQuery(cols[i]).find('div[class*="col-"]');
+				if(!desc.length) items.push(cols[i]);
+			};
+
 			if(mode == 'nounit'){
 				var ws = [];
 				for(var i = 0; i < cols.length; i++){
@@ -73,23 +108,17 @@
 
 			//사이간격(gutter)를 넣기 ////
 			//표처럼 모든 컬럼을 배치했을 때, 아귀고 맞고, 직사각형을 형성한다고 가정한다.
+			if(!items.length) return;
+
 			var gutter = jQuery(this).attr('data-gutter');
 			if(!gutter) return;
 			gutter = parseFloat(gutter);
 
 			var $maxRow;
 			if(jQuery(this).hasClass('row')) $maxRow = jQuery(this);
-			else $maxRow = jQuery(jQuery(this).find('.row')[0]);
-
-			var items = [];
-			jQuery(this).find('div[class^="col-"]').each(function(){
-				var desc = jQuery(this).find('div[class^="col-"]');
-				if(!desc.length){
-					items.push(this);
-				}
-			});
-			if(!items.length) return;
-		
+			else $maxRow = jQuery(this).find('.row').first();
+	
+			//폭 사이 간격 ////
 			var cbls = []; cbls[0] = jQuery(items[0]).offset().left;
 			for(var i = 1; i < items.length; i++){
 				var l = jQuery(items[i]).offset().left;
@@ -127,6 +156,7 @@
 				jQuery(items[i]).css({marginLeft: ml, marginRight: mr});
 			}//for(i)
 			
+			//높이 사이 간격 ////
 			var rbls = [];
 			rbls[0] = jQuery(items[0]).offset().top;
 			for(var i = 1; i < items.length; i++){
@@ -164,7 +194,6 @@
 				jQuery(items[i]).outerHeight(h);
 				jQuery(items[i]).css({marginTop: mt, marginBottom: mb});
 			}//for(i)
-
 
 		});//this.each
 	}
