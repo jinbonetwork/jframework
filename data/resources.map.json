@@ -131,6 +131,12 @@
 		"priority":"-999999999",
 		"deps":[]
 	},
+	"snap.svg":{
+		"js":["contrib/snap.svg/0.3.0/dist/snap.svg-min.js"],
+		"css":[],
+		"priority":"-999999999",
+		"deps":[]
+	},
 	"svg.js":{
 		"js":["contrib/svg.js/1.0rc3/dist/svg.min.js"],
 		"css":[],
