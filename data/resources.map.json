@@ -170,6 +170,12 @@
 		"priority":"-999999999",
 		"deps":["jquery"]
 	},
+	"jfAttributes":{
+		"js":["js/attributes.js"],
+		"css":[],
+		"priority":"-999999999",
+		"deps":["jquery"]
+	},
 	"jframework-package":{
 		"js":[
 			"js/jframework.js.php",

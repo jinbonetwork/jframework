@@ -12,18 +12,18 @@
 ?>
 	<title>SVG</title>
 	<style>
-		.wow {
-			position: fixed;
+		#skrollr-body {
+			position: relative;
+			width: 100%;
+			height: 100%;
 		}
 		.polygon-test {
 			fill: rgba(255,0,0,0.5);		
 		}
 	</style>
 </head>
-
-<body>
-	<div class="wow bounceInUp"><svg id="test"></svg></div>
-
+<body id="skrollr-body">
+	<svg id="test" class="wow bounceInUp"></svg>
 	<script type="text/javascript">
 		var test = SVG('test').size(700,280);
 		var polygon = test.polygon('0,0 0,0 0,0 0,0');
@@ -39,7 +39,8 @@
 		});
 
 		var _skrollr = skrollr.init();
-		var _wow = new WOW().init();
+		var _wow = new WOW({
+		}).init();
 	</script>
 </body>
 
