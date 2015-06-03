@@ -28,29 +28,77 @@
 		.color3 { background-color: #2288ff; }
 		.color4 { border: solid 3px #000000; background-color: #ff0000; }
 		.color5 { background-color: #aabbff; }
+		.item {
+			height: 100%;
+			border: solid 5px #ff0000;
+			background-color: #eeeeee
+		}
 	</style>
 </head>
 <body>
 
-<div class="container-fluid" data-height-mode="1" data-gutter="10">
-	<!-- unit 모드 사용 -->
+<div class="container-fluid" data-height-mode="1" data-gutter="20">
 	<div class="row">
-		<div class="col-xs-12 col-md-3 color1" data-height-xs="2" data-height-md="6">1.<br>내용없음</div>
-		<div class="col-xs-12 col-md-6">
+		<div class="col-xs-3" data-height-xs="6">
+			<div class="item"></div>
+		</div>
+		<div class="col-xs-3" data-height-xs="6">
+			<div class="item"></div>
+		</div>
+		<div class="col-xs-3">
 			<div class="row">
 				<div class="row">
-					<div class="col-xs-12 color2" data-height-xs="2" data-height-md="3">2.<br>어린이집 CCTV - 어린이집 보육교사가 감시받지 않는 것이 아기들한테 좋당께?!</div>
+					<div class="col-xs-12" data-height-xs="3">
+						<div class="item"></div>
+					</div>
 				</div>
-			</div>
-			<div class="row">
 				<div class="row">
-					<div class="col-xs-12 col-sm-6 color3" data-height-xs="2" data-height-sm="3">3.<br>홈플러스 개인정보 유출: 내 정보가 유출됐는지 안됐는지 갈쳐주지도 않고.</div>
-					<div class="col-xs-12 col-sm-6 color4" data-height-xs="2" data-height-sm="3">4.<br>노동자 DNA 채취</div>
+					<div class="col-xs-12" data-height-xs="3">
+						<div class="item"></div>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div class="col-xs-12 col-md-3 color5" data-height-xs="2" data-height-md="6">5.<br>사이버 사찰 금지법</div>
+		<div class="col-xs-3">
+			<div class="row">
+				<div class="row">
+					<div class="col-xs-12" data-height-xs="3">
+						<div class="item"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12" data-height-xs="3">
+						<div class="item"></div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
+
+	<!-- unit 모드 사용 -->
+	<!--
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-3 color1" data-height-xs="2" data-height-sm="2" data-height-md="6">1.<br>내용없음</div>
+		<div class="col-xs-12 col-sm-12 col-md-6">
+			<div class="row">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12" data-height-xs="2" data-height-sm="2" data-height-md="3">
+						<div class="item">
+							2.<br>어린이집 CCTV - 어린이집 보육교사가 감시받지 않는 것이 아기들한테 좋당께?!
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-md-6 color3" data-height-xs="2" data-height-sm="3" data-height-md="3">3.<br>홈플러스 개인정보 유출: 내 정보가 유출됐는지 안됐는지 갈쳐주지도 않고.</div>
+					<div class="col-xs-12 col-sm-6 col-md-6 color4" data-height-xs="2" data-height-sm="3" data-height-md="3">4.<br>노동자 DNA 채취</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-3 color5" data-height-xs="2" data-height-sm="2" data-height-md="6">5.<br>사이버 사찰 금지법</div>
+	</div>
+	-->
 </div>
 <div class="container-fluid" >
 	<!-- non-unit 모드 사용 -->
