@@ -131,6 +131,12 @@
 		"priority":"-999999999",
 		"deps":[]
 	},
+	"snap.svg":{
+		"js":["contrib/snap.svg/0.3.0/dist/snap.svg-min.js"],
+		"css":[],
+		"priority":"-999999999",
+		"deps":[]
+	},
 	"svg.js":{
 		"js":["contrib/svg.js/1.0rc3/dist/svg.min.js"],
 		"css":[],
@@ -170,10 +176,15 @@
 		"priority":"-999999999",
 		"deps":["jquery"]
 	},
+	"jfAttributes":{
+		"js":["js/attributes.js"],
+		"css":[],
+		"priority":"-999999999",
+		"deps":["jquery"]
+	},
 	"jframework-package":{
 		"js":[
 			"js/jframework.js.php",
-			"js/resizeAny.js",
 			"js/regheight.js",
 			"js/script.js"
 		],

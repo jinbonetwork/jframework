@@ -32,6 +32,8 @@ jframework
 			* 1.1.2
 		* [skrollr](http://prinzhorn.github.io/skrollr/) -- (JS) 패럴랙스 애니메이션 라이브러리.
 			* 0.6.29
+		* [snap.svg](http://snapsvg.io/) -- (JS) SVG 객체를 다룰 수 있도록 도와주는 라이브러리.
+			* 0.3.0
 		* [svg.js](http://svgjs.com/) -- (JS) SVG 객체를 다룰 수 있도록 도와주는 라이브러리.
 			* 1.0rc3
 	* 사용자화
