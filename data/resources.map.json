@@ -1,65 +1,112 @@
 {
+	"less.php":{
+		"version":"0.4.0",
+		"reference":"http://leafo.net/lessphp/",
+		"description":"(PHP) 서버 측에서 사용할 수 있는 LESS 변환기.",
+		"php":["contrib/lessphp/0.4.0/lessc.inc.php"],
+		"js":[],
+		"css":[],
+		"deps":[],
+		"priority":"-999999999"
+	},
+	"browser.php":{
+		"version":"2015.02.09",
+		"reference":"http://chrisschuld.com/projects/browser-php-detecting-a-users-browser-from-php.html",
+		"description":"(PHP) 서버 측에서 접속자 브라우저를 판별하는 라이브러리.",
+		"php":["contrib/browser.php/2015.02.09/lib/Browser.php"],
+		"js":[],
+		"css":[],
+		"deps":[],
+		"priority":"-999999999"
+	},
 	"less.js":{
+		"version":"2.5.0",
+		"reference":"http://lesscss.org",
+		"description":"(JS) 개발 환경에서 사용할 프론트엔드 LESS 변환기.",
 		"js":["contrib/less.js/2.5.0/dist/less.min.js"],
 		"css":[],
-		"priority":"-999999999",
-		"deps":[]
+		"deps":[],
+		"priority":"-999999999"
 	},
 	"html5shiv":{
+		"version":"3.7.2",
+		"reference":"http://paulirish.com/2011/the-history-of-the-html5-shiv/",
+		"description":"(JS) 구형 브라우저에서 HTML5 요소를 사용할 수 있도록 도와주는 라이브러리.",
 		"js":["contrib/html5shiv/3.7.2/dist/html5shiv.min.js"],
 		"css":[],
+		"deps":[],
 		"priority":"-999999999",
 		"options":{
 			"condition":"if lte IE 9"
-		},
-		"deps":[]
+		}
 	},
 	"modernizr":{
+		"version":"2.8.3",
+		"reference":"http://modernizr.com",
+		"description":"(JS) HTML5/CSS3 호환성 검사 라이브러리.",
 		"js":["contrib/modernizr/2.8.3/modernizr.custom.js"],
 		"css":[],
-		"priority":"-999999999",
-		"deps":[]
+		"deps":[],
+		"priority":"-999999999"
 	},
 	"mobile-detect.js":{
+		"version":"1.0.0",
+		"reference":"http://hgoebl.github.io/mobile-detect.js/",
+		"description":"(JS) 모바일 브라우저 검사 라이브러리.",
 		"js":[
 			"contrib/mobile-detect.js/1.0.0/mobile-detect.min.js",
 			"contrib/mobile-detect.js/1.0.0/mobile-detect-modernizr.js"
 		],
 		"css":[],
-		"priority":"-999999999",
-		"deps":["modernizr"]
+		"deps":["modernizr"],
+		"priority":"-999999999"
 	},
 	"respond":{
+		"version":"1.4.2",
+		"reference":"https://github.com/scottjehl/Respond",
+		"description":"(JS) IE8에서 반응형 처리를 보조하기 위한 라이브러리.",
 		"js":[
 			"contrib/respond/1.4.2/dest/respond.min.js",
 			"contrib/respond/1.4.2/dest/respond.matchmedia.addListener.min.js"
 		],
 		"css":[],
-		"priority":"-999999999",
-		"deps":[]
+		"deps":[],
+		"priority":"-999999999"
+	},
+	"js-cookie":{
+		"version":"1.5.1",
+		"reference":"https://github.com/js-cookie/js-cookie",
+		"description":"(JS) 쿠키를 쉽게 읽고 쓸 수 있도록 도와주는 라이브러리.",
+		"js":["contrib/js-cookie/1.5.1/src/js.cookie.js"],
+		"css":[],
+		"deps":[],
+		"priority":"-999999999"
 	},
 	"jquery":{
+		"version":"2.1.3",
+		"reference":"http://jquery.com",
+		"description":"(JS) 자바스크립트 프레임워크.",
 		"js":[
 			"contrib/jquery/2.1.3/jquery-2.1.3.min.js",
 			"js/jquery.js"
 		],
 		"css":[],
-		"priority":"-999999999",
-		"deps":["mobile-detect.js"]
-	},
-	"js-cookie":{
-		"js":["contrib/js-cookie/1.5.1/src/js.cookie.js"],
-		"css":[],
-		"priority":"-999999999",
-		"deps":["jquery"]
+		"deps":["mobile-detect.js"],
+		"priority":"-999999999"
 	},
 	"jquery-ui":{
+		"version":"1.11.4",
+		"reference":"http://jqueryui.com",
+		"description":"(JS, CSS) 몇 가지 사용자 인터페이스 세트를 제공하는 jQuery 플러그인.",
 		"js":["contrib/jquery-ui/1.11.4_no-tooltip/jquery-ui.min.js"],
 		"css":["css/jquery-ui.css"],
-		"priority":"-999999999",
-		"deps":["jquery"]
+		"deps":["jquery"],
+		"priority":"-999999999"
 	},
 	"fancybox":{
+		"version":"2.1.5",
+		"reference":"http://fancyapps.com",
+		"description":"(JS, CSS) 전체화면 오버레이 기능을 제공하는 jQuery 플러그인.",
 		"js":[
 			"contrib/fancybox/2.1.5/lib/jquery.mousewheel-3.0.6.pack.js",
 			"contrib/fancybox/2.1.5/source/jquery.fancybox.pack.js?v=2.1.5",
@@ -74,154 +121,231 @@
 			"contrib/fancybox/2.1.5/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7",
 			"css/fancybox.css"
 		],
-		"priority":"-999999999",
-		"deps":["jquery"]
+		"deps":["jquery"],
+		"priority":"-999999999"
 	},
 	"imagesloaded":{
+		"version":"3.1.8",
+		"reference":"http://imagesloaded.desandro.com/",
+		"description":"(JS) 이미지가 실제로 로드됐을 때 사용자 함수를 실행하는 jQuery 플러그인.",
 		"js":["contrib/imagesloaded/3.1.8/imagesloaded.pkgd.min.js"],
 		"css":[],
-		"priority":"-999999999",
-		"deps":["jquery"]
+		"deps":["jquery"],
+		"priority":"-999999999"
 	},
 	"imagefill.js":{
+		"version":"2015.04.29",
+		"reference":"http://johnpolacek.github.io/imagefill.js/",
+		"description":"(JS) 이미지가 부모 엘리먼트에 꽉 차도록 크기를 조정하는 jQuery 플러그인.",
 		"js":["contrib/imagefill.js/2015.04.29/js/jquery-imagefill.js"],
 		"css":[],
-		"priority":"-999999999",
-		"deps":["imagesloaded"]
+		"deps":["imagesloaded"],
+		"priority":"-999999999"
 	},
 	"loaders.css":{
+		"version":"0.1.1",
+		"reference":"http://connoratherton.com/loaders",
+		"description":"(CSS) '로딩 중' 표시에 사용할 CSS 애니메이션 스타일.",
 		"js":[],
 		"css":["contrib/loaders.css/0.1.1/loaders.min.css"],
-		"priority":"-999999999",
-		"deps":[]
+		"deps":[],
+		"priority":"-999999999"
 	},
 	"is-loading":{
+		"version":"1.0.6",
+		"reference":"http://hekigan.github.io/is-loading/",
+		"description":"(JS) '로딩 중' 표시 기능을 제공하는 jQuery 플러그인.",
 		"js":[
 			"contrib/is-loading/1.0.6/jquery.isloading.min.js",
 			"js/is-loading.js"
 		],
 		"css":["css/is-loading.css"],
-		"priority":"-999999999",
 		"deps":[
 			"jquery",
 			"loaders.css"
-		]
+		],
+		"priority":"-999999999"
 	},
 	"swiper":{
+		"version":"3.0.7",
+		"reference":"http://www.idangero.us/swiper/",
+		"description":"(JS, CSS) 슬라이드쇼를 생성하는 라이브러리. jQuery 플러그인 형식으로 사용함.",
 		"js":["contrib/swiper/3.0.7/dist/js/swiper.min.js"],
 		"css":["contrib/swiper/3.0.7/dist/css/swiper.min.css"],
-		"priority":"-999999999",
-		"deps":["jquery"]
+		"deps":["jquery"],
+		"priority":"-999999999"
 	},
 	"animate.css":{
+		"version":"3.1.0",
+		"reference":"http://daneden.github.io/animate.css",
+		"description":"(CSS) CSS3 애니메이션 프리셋.",
 		"js":[],
 		"css":["contrib/animate.css/3.1.0/animate.min.css"],
-		"priority":"-999999999",
-		"deps":[]
+		"deps":[],
+		"priority":"-999999999"
 	},
 	"wow.js":{
+		"version":"1.1.2",
+		"reference":"http://mynameismatthieu.com/WOW/",
+		"description":"(JS) 엘리먼트가 등장할 때 애니메이션을 적용하는 라이브러리.",
 		"js":["contrib/wow.js/1.1.2/dist/wow.min.js"],
 		"css":[],
-		"priority":"-999999999",
-		"deps":["animate.css"]
+		"deps":["animate.css"],
+		"priority":"-999999999"
 	},
 	"skrollr":{
+		"version":"0.6.29",
+		"reference":"http://prinzhorn.github.io/skrollr/",
+		"description":"(JS) 패럴랙스 애니메이션 라이브러리.",
 		"js":["contrib/skrollr/0.6.29/dist/skrollr.min.js"],
 		"css":[],
-		"priority":"-999999999",
-		"deps":[]
+		"deps":[],
+		"priority":"-999999999"
 	},
 	"snap.svg":{
+		"version":"0.3.0",
+		"reference":"http://snapsvg.io/",
+		"description":"(JS) SVG 객체를 다룰 수 있도록 도와주는 라이브러리.",
 		"js":["contrib/snap.svg/0.3.0/dist/snap.svg-min.js"],
 		"css":[],
-		"priority":"-999999999",
-		"deps":[]
+		"deps":[],
+		"priority":"-999999999"
 	},
 	"svg.js":{
+		"version":"1.0rc3",
+		"reference":"http://svgjs.com/",
+		"description":"(JS) SVG 객체를 다룰 수 있도록 도와주는 라이브러리.",
 		"js":["contrib/svg.js/1.0rc3/dist/svg.min.js"],
 		"css":[],
-		"priority":"-999999999",
-		"deps":[]
+		"deps":[],
+		"priority":"-999999999"
 	},
 	"normalize.css":{
+		"version":"3.0.3",
+		"reference":"https://github.com/necolas/normalize.css",
+		"description":"(CSS) 초기화 코드.",
 		"js":[],
 		"css":["contrib/normalize.css/3.0.3/normalize.css"],
-		"priority":"-999999999",
-		"deps":[]
+		"deps":[],
+		"priority":"-999999999"
 	},
 	"font-awesome":{
+		"version":"4.3.0",
+		"reference":"https://github.com/FortAwesome/Font-Awesome",
+		"description":"(CSS) 아이콘 폰트.",
 		"js":[],
 		"css":["contrib/font-awesome/4.3.0/css/font-awesome.min.css"],
-		"priority":"-999999999",
-		"deps":[]
+		"deps":[],
+		"priority":"-999999999"
 	},
 	"webfonts":{
+		"version":"2015.01.14",
+		"reference":"https://github.com/singihae/Webfonts",
+		"description":"(CSS) 한글 웹폰트.",
 		"js":[],
 		"css":["contrib/webfonts/2015.01.14/style.css"],
-		"priority":"-999999999",
-		"deps":[]
+		"deps":[],
+		"priority":"-999999999"
 	},
 	"notosans-subset":{
+		"version":"2015.01.02",
+		"reference":"https://github.com/UYEONG/NotoSans-subset",
+		"description":"Noto Sans CJK KR 글꼴을 웹폰트로 쓰기 위해 경량화한 것.",
 		"js":[],
-		"css":["contrib/notosans-subset/2015.05.13/style.css"],
-		"priority":"-999999999",
-		"deps":[]
+		"css":["contrib/notosans-subset/2015.01.02/style.css"],
+		"deps":[],
+		"priority":"-999999999"
 	},
 	"bootstrap":{
+		"version":"3.3.4",
+		"reference":"https://github.com/twbs/bootstrap",
+		"description":"(JS, CSS) 프론트엔드 웹 디자인 프레임워크.",
 		"js":[
 			"contrib/bootstrap/3.3.4/js/tooltip.js",
 			"js/bootstrap.js"
 		],
 		"css":["css/bootstrap.css"],
-		"priority":"-999999999",
-		"deps":["jquery"]
+		"deps":["jquery"],
+		"priority":"-999999999"
 	},
-	"jfAttributes":{
-		"js":["js/attributes.js"],
+	"jfont":{
+		"version":"2015.04.30",
+		"reference":"https://github.com/jinbonetwork/jframework/tree/master/lib/jfont",
+		"description":"(CSS) 진보넷 프로젝트에 사용할 아이콘 폰트 세트.",
+		"js":[],
+		"css":["lib/jfont/2015.04.30/css/jfont.css"],
+		"deps":[],
+		"priority":"-999999999"
+	},
+	"regheight.js":{
+		"version":"1.0",
+		"reference":"https://github.com/jinbonetwork/jframework/tree/master/lib/regheight.js",
+		"description":"(JS) `data-height-mode` 옵션에 따라 블록 높이를 맟추는 스크립트.",
+		"js":["lib/regheight.js/1.0/js/regheight.js"],
+		"css":["lib/regheight.js/1.0/css/regheight.css"],
+		"deps":["jquery"],
+		"priority":"-999999999"
+	},
+	"attributes.js":{
+		"version":"0.9",
+		"reference":"https://github.com/jinbonetwork/jframework/tree/master/lib/attributes.js",
+		"description":"(JS) json map을 이용해서 HTML 문서 안의 요소들에 사용자 속성을 지정하는 스크립트.",
+		"js":["lib/attributes.js/0.9/js/attributes.js"],
 		"css":[],
-		"priority":"-999999999",
-		"deps":["jquery"]
+		"deps":["jquery"],
+		"priority":"-999999999"
 	},
 	"jframework-package":{
+		"version":"",
+		"reference":"",
+		"description":"",
 		"js":[
 			"js/jframework.js.php",
-			"js/regheight.js",
 			"js/script.js"
 		],
 		"css":[
-			"fonts/style.css",
-			"css/regheight.css",
 			"css/style.css"
 		],
-		"priority":"-999999999",
 		"deps":[
 			"normalize.css",
 			"font-awesome",
+			"jfont",
 			"jquery",
-			"bootstrap"
-		]
+			"bootstrap",
+			"regheight.js"
+		],
+		"priority":"-999999999"
 	},
 	"jframework-fallback-prepend":{
+		"version":"",
+		"reference":"",
+		"description":"",
 		"js":[],
 		"css":[],
-		"priority":"-999999999",
 		"deps":[
 			"jquery",
 			"respond",
 			"js-cookie",
 			"fancybox"
-		]
+		],
+		"priority":"-999999999"
 	},
 	"jframework-fallback-append":{
+		"version":"",
+		"reference":"",
+		"description":"",
 		"js":["js/fallback.js"],
 		"css":["css/fallback.css"],
-		"priority":"-999999999",
-		"deps":["jframework-package"]
+		"deps":["jframework-package"],
+		"priority":"-999999999"
 	},
 	"jframework":{
+		"version":"",
+		"reference":"",
+		"description":"",
 		"js":[],
 		"css":[],
-		"priority":"-999999999",
-		"deps":["jframework-package"]
+		"deps":["jframework-package"],
+		"priority":"-999999999"
 	}
 }
