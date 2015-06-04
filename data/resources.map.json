@@ -270,27 +270,27 @@
 	},
 	"jfont":{
 		"version":"2015.04.30",
-		"reference":"https://github.com/jinbonetwork/jframework/tree/master/contrib/jfont",
+		"reference":"https://github.com/jinbonetwork/jframework/tree/master/lib/jfont",
 		"description":"(CSS) 진보넷 프로젝트에 사용할 아이콘 폰트 세트.",
 		"js":[],
-		"css":["contrib/jfont/2015.04.30/css/jfont.css"],
+		"css":["lib/jfont/2015.04.30/css/jfont.css"],
 		"deps":[],
 		"priority":"-999999999"
 	},
 	"regheight.js":{
 		"version":"1.0",
-		"reference":"https://github.com/jinbonetwork/jframework/tree/master/contrib/regheight.js",
+		"reference":"https://github.com/jinbonetwork/jframework/tree/master/lib/regheight.js",
 		"description":"(JS) `data-height-mode` 옵션에 따라 블록 높이를 맟추는 스크립트.",
-		"js":["contrib/regheight.js/1.0/js/regheight.js"],
-		"css":["contrib/regheight.js/1.0/css/regheight.css"],
-		"deps":[],
+		"js":["lib/regheight.js/1.0/js/regheight.js"],
+		"css":["lib/regheight.js/1.0/css/regheight.css"],
+		"deps":["jquery"],
 		"priority":"-999999999"
 	},
-	"jfAttributes":{
-		"version":"",
-		"reference":"",
-		"description":"",
-		"js":["js/attributes.js"],
+	"attributes.js":{
+		"version":"0.9",
+		"reference":"https://github.com/jinbonetwork/jframework/tree/master/lib/attributes.js",
+		"description":"(JS) json map을 이용해서 HTML 문서 안의 요소들에 사용자 속성을 지정하는 스크립트.",
+		"js":["lib/attributes.js/0.9/js/attributes.js"],
 		"css":[],
 		"deps":["jquery"],
 		"priority":"-999999999"
