@@ -286,11 +286,20 @@
 		"deps":["jquery"],
 		"priority":"-999999999"
 	},
-	"attributes.js":{
+	"maniprop.js":{
 		"version":"0.9",
-		"reference":"https://github.com/jinbonetwork/jframework/tree/master/lib/attributes.js",
-		"description":"(JS) json map을 이용해서 HTML 문서 안의 요소들에 사용자 속성을 지정하는 스크립트.",
-		"js":["lib/attributes.js/0.9/js/attributes.js"],
+		"reference":"https://github.com/jinbonetwork/jframework/tree/master/lib/maniprop.js",
+		"description":"(JS) json map을 이용해서 HTML 문서 안의 요소들에 사용자 속성을 지정하는 jQuery 의존성 스크립트.",
+		"js":["lib/maniprop.js/0.9/js/maniprop.js"],
+		"css":[],
+		"deps":["jquery"],
+		"priority":"-999999999"
+	},
+	"lazydo.js":{
+		"version":"0.9",
+		"reference":"https://github.com/jinbonetwork/jframework/tree/master/lib/lazydo.js",
+		"description":"(JS) 사용자 이벤트 lazydo를 이용해서 일련의 init 방식 라이브러리들을 한꺼번에 실행하기 위한 jQuery 의존성 스크립트.",
+		"js":["lib/lazydo.js/0.9/js/lazydo.js"],
 		"css":[],
 		"deps":["jquery"],
 		"priority":"-999999999"
