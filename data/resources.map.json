@@ -44,7 +44,7 @@
 		"version":"2.8.3",
 		"reference":"http://modernizr.com",
 		"description":"(JS) HTML5/CSS3 호환성 검사 라이브러리.",
-		"js":["contrib/modernizr/2.8.3/modernizr.custom.js"],
+		"js":["contrib/modernizr/2.8.3/modernizr.js"],
 		"css":[],
 		"deps":[],
 		"priority":"-999999999"
