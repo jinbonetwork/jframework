@@ -23,13 +23,13 @@ jframework
 
 	require_once dirname(__FILE__).'/jframework/jframework.php';
 
-### 2. [/data/resources.map.json 파일](https://github.com/jinbonetwork/jframework/blob/master/data/resources.map.json)을 참고해서 필요한 구성요소를 결정합니다.
+### 2. [/data/resources.map.json](https://github.com/jinbonetwork/jframework/blob/master/data/resources.map.json) 파일을 참고해서 필요한 구성요소를 결정합니다.
 
 * 스크롤하면 애니메이션이 일어나는 요소들이 필요할 경우 `wow.js` 라이브러리를 사용.
 * '로딩 중' 표시를 할 경우 `is-loading` 라이브러리를 사용.
 * 공용 레이아웃을 사용할 경우 `jframework`를 사용.
 
-### 3. <HEAD></HEAD> 사이에 다음 코드를 삽입합니다.
+### 3. `<HEAD></HEAD>` 사이에 다음 코드를 삽입합니다.
 
 	JFTemplates::printHead(array('wow.js','is-loading','jframework'));
 
@@ -47,7 +47,7 @@ jframework 설정을 변경해야 할 경우, 다음 항목들을 살펴보세�
 
 ### 2. CSS 설정을 변경할 경우
 
-jframework는 less 폴더 안의 소스 파일들을 변환해서 실제로 사용할 CSS 파일을 만들고 라이브러리 의존성 정의 파일을 이용해서 그 경로를 읽어들입니다. 따라서 새 CSS 파일을 만들었다면 정의 파일을 수정하거나 직접 <LINK> 또는 <SCRIPT> 태그를 작성해야 합니다. 새 CSS 파일을 만들 때 참고할 파일은 다음과 같습니다.
+jframework는 less 폴더 안의 소스 파일들을 변환해서 실제로 사용할 CSS 파일을 만들고 라이브러리 의존성 정의 파일을 이용해서 그 경로를 읽어들입니다. 따라서 새 CSS 파일을 만들었다면 정의 파일을 수정하거나 직접 `<LINK>` 또는 `<SCRIPT>` 태그를 작성해야 합니다. 새 CSS 파일을 만들 때 참고할 파일은 다음과 같습니다.
 
 * `less/_variables.less` -- bootstrap variables 파일의 복사본으로 컬럼 갯수, 마진, 글자 색 등의 설정값을 담고 있습니다.
 * `less/_config.less` -- `less/_variables.less` 파일과 bootstrap mixins 파일을 읽어들입니다.
