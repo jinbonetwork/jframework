@@ -16,6 +16,10 @@ regheight.js
 				"screen_lg_min": 1200 
 			});
 		```
+		* 예
+		```{.javascript}
+			jQuery('selector').regHeight('//exmaple.com/config.json');
+		```
 	* 예
 	```{.javascript}
 		jQuery(document).ready(function(){
