@@ -65,5 +65,6 @@ jframework는 less 폴더 안의 소스 파일들을 변환해서 실제로 사�
 
 	<?php
 	JFResources::$map = 'new_less/new_resources.map.json';
+	JFResources::$map_fallback = 'new_less/new_resources.map.fallback.json';
 	JFTemplates::printHead(array('jframework'));
 	?>
