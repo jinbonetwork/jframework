@@ -256,6 +256,15 @@
 		"deps":[],
 		"priority":"-999999999"
 	},
+	"notosans-subset-black-and-thin":{
+		"version":"2015.06.15",
+		"reference":"https://github.com/jinbonetwork/jframework/tree/master/lib/notosans-subset-black-and-thin",
+		"description":"notosans-subset 패키지에 없는 Black, Thin 글꼴.",
+		"js":[],
+		"css":["lib/notosans-subset-black-and-thin/2015.06.15/css/style.css"],
+		"deps":[],
+		"priority":"-999999999"
+	},
 	"bootstrap":{
 		"version":"3.3.4",
 		"reference":"https://github.com/twbs/bootstrap",
