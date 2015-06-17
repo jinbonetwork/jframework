@@ -1,4 +1,18 @@
+[data-height-mode] {
+  padding-left: 0;
+  padding-right: 0;
+}
+[data-height-mode].row,
+[data-height-mode] .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+[data-height-mode].row [class^="col-"],
+[data-height-mode] .row [class^="col-"] {
+  padding-left: 0;
+  padding-right: 0;
+}
 [data-height-mode] .component {
-	display: block;
-	height: 100%;
+  display: block;
+  height: 100%;
 }
