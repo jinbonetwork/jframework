@@ -1,5 +1,6 @@
 <?php
 abstract class JF {
+	public static $slug = 'jframework';
 	private static $instances = array();
 	protected function __construct() {
 	}
