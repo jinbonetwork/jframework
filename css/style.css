@@ -1,28 +1,40 @@
-.editor-generated-content p,
-.editor-generated-content h1,
-.editor-generated-content h2,
-.editor-generated-content h3,
-.editor-generated-content h4,
-.editor-generated-content h5,
-.editor-generated-content h6,
-.editor-generated-content ul,
-.editor-generated-content ol,
-.editor-generated-content dl,
-.editor-generated-content blockquote,
-.editor-generated-content pre,
-.editor-generated-content xmp + p,
-.editor-generated-content h1,
-.editor-generated-content h2,
-.editor-generated-content h3,
-.editor-generated-content h4,
-.editor-generated-content h5,
-.editor-generated-content h6,
-.editor-generated-content ul,
-.editor-generated-content ol,
-.editor-generated-content dl,
-.editor-generated-content blockquote,
-.editor-generated-content pre,
-.editor-generated-content xmp {
+.editor-generated-content * + xmp {
+  margin-top: 1em;
+}
+.editor-generated-content * + pre {
+  margin-top: 1em;
+}
+.editor-generated-content * + blockquote {
+  margin-top: 1em;
+}
+.editor-generated-content * + dl {
+  margin-top: 1em;
+}
+.editor-generated-content * + ol {
+  margin-top: 1em;
+}
+.editor-generated-content * + ul {
+  margin-top: 1em;
+}
+.editor-generated-content * + h6 {
+  margin-top: 1em;
+}
+.editor-generated-content * + h5 {
+  margin-top: 1em;
+}
+.editor-generated-content * + h4 {
+  margin-top: 1em;
+}
+.editor-generated-content * + h3 {
+  margin-top: 1em;
+}
+.editor-generated-content * + h2 {
+  margin-top: 1em;
+}
+.editor-generated-content * + h1 {
+  margin-top: 1em;
+}
+.editor-generated-content * + p {
   margin-top: 1em;
 }
 @font-face {
