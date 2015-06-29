@@ -29,7 +29,7 @@
 		.item {
 			height: 100%;
 			border: solid 5px #ff0000;
-			background-color: #eeeeee
+			background-color: #eeeeee;
 		}
 	</style>
 </head>
@@ -37,35 +37,35 @@
 
 <div class="container-fluid" data-height-mode="1" data-gutter="20">
 	<div class="row">
-		<div class="col-xs-3" data-height-xs="6" data-height-xxs="4">
+		<div class="col-md-3 col-xs-12" data-height-md="6" data-height-xs="3" data-height-xxs="5">
 			<div class="item"></div>
 		</div>
-		<div class="col-xs-3" data-height-xs="6" data-height-xxs="4">
+		<div class="col-md-3 col-xs-12" data-height-md="6"data-height-xs="3 "data-height-xxs="5">
 			<div class="item"></div>
 		</div>
-		<div class="col-xs-3">
+		<div class="col-md-3 col-xs-6">
 			<div class="row">
 				<div class="row">
-					<div class="col-xs-12" data-height-xs="3" data-height-xxs="4">
+					<div class="col-xs-12" data-height-xs="3" data-height-xxs="5">
 						<div class="item"></div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-xs-12" data-height-xs="3" data-height-xxs="4">
+					<div class="col-xs-12" data-height-xs="3" data-height-xxs="5">
 						<div class="item"></div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="col-xs-3">
+		<div class="col-md-3 col-xs-6">
 			<div class="row">
 				<div class="row">
-					<div class="col-xs-12" data-height-xs="3" data-height-xxs="4">
+					<div class="col-xs-12" data-height-xs="3" data-height-xxs="5">
 						<div class="item"></div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-xs-12" data-height-xs="3" data-height-xxs="4">
+					<div class="col-xs-12" data-height-xs="3" data-height-xxs="5">
 						<div class="item"></div>
 					</div>
 				</div>
