@@ -1,3 +1,14 @@
+@media all and (max-width: 319px) {
+  [class~="col-xs-"],
+  [class~="col-sm-"],
+  [class~="col-md-"],
+  [class~="col-lg-"] {
+    float: none;
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
 .editor-generated-content * + xmp {
   margin-top: 1em;
 }
