@@ -51,6 +51,21 @@
 @import "./../contrib/bootstrap/3.3.4/less/responsive-utilities.less";
 
 //-----------------------------------------------------------------------------
+//	Bootstrap media query patch
+//-----------------------------------------------------------------------------
+@media all and (max-width: (@grid-float-breakpoint - 1)) {
+	[class~="col-xs-"],
+	[class~="col-sm-"],
+	[class~="col-md-"],
+	[class~="col-lg-"] {
+		float: none;
+		width: auto;
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+//-----------------------------------------------------------------------------
 //	Bootstrap modification for jFramework
 //-----------------------------------------------------------------------------
 .jf-tooltip(@jf-tooltip-class:default) {

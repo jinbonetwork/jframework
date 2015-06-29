@@ -2428,6 +2428,17 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     display: none !important;
   }
 }
+@media all and (max-width: 319px) {
+  [class~="col-xs-"],
+  [class~="col-sm-"],
+  [class~="col-md-"],
+  [class~="col-lg-"] {
+    float: none;
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
 .tooltip.primary .tooltip-inner {
   background-color: #72bfba;
 }
