@@ -4,7 +4,7 @@
 	.-(@i:length(@editor-generated-content-block-items)) when (@i>0) {
 		@editor-generated-content-block-item: extract(@editor-generated-content-block-items,@i);
 		* + @{editor-generated-content-block-item} {
-			margin-top: 1em;
+			margin-top: @paragraph-spacing;
 		}
 		.-((@i - 1));
 	}
