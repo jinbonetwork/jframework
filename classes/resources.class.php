@@ -14,8 +14,9 @@ class JFResources extends JF {
 	}
 
 	public static function initMap() {
-		self::$map = JF_PATH."/data/resources.map.json";
-		self::$map_fallback = JF_PATH."/data/resources.map.fallback.json";
+		self::$map = defined(JF_MAP)? JF_MAP : JF_PATH."/data/resources.map.json";
+		self::$map_fallback = defined(JF_MAP_FALLBACK)? JF_MAP_FALLBACK : JF_PATH."/data/resources.map.fallback.json";
+		self::$force_fallback = defined(JF_FORCE_FALLBACK)? JF_FORCE_FALLBACK : self::$force_fallback;
 		if(!self::$index) {
 			self::initResourceMap();
 		}
