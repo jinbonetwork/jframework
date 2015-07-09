@@ -4,8 +4,8 @@ regheight.js
 높이 조정 스크립트.
 
 * 사용
-	* jQuery(_선택자_).regHeight(_user config_);
-	* _user config_: config는 data/config.json에서 가져오지만, 사용자 config를 설정할 수 있다.
+	* jQuery(_선택자_).regHeight(_userConfig_, _isEnabled_);
+	* _userConfig_: config는 data/config.json에서 가져오지만, 사용자 config를 설정할 수 있다.
 		* 예
 		```{.javascript}
 			jQuery('selector').regHeight({
@@ -20,6 +20,7 @@ regheight.js
 		```{.javascript}
 			jQuery('selector').regHeight('//exmaple.com/config.json');
 		```
+	* _isEnabled_: false이면 높이 조정은 하지 않고 config 객체만 반환한다.
 	* 예
 	```{.javascript}
 		jQuery(document).ready(function(){
