@@ -103,6 +103,15 @@
 		"deps":["jquery"],
 		"priority":"-999999999"
 	},
+	"gsap":{
+		"version":"1.17.0",
+		"reference":"http://greensock.com",
+		"description":"(JS) 애니메이션 라이브러리",
+		"js":["contrib/gsap/1.17.0/src/minified/TweenMax.min.js"],
+		"css":[],
+		"deps":[],
+		"priority":"-999999999"
+	},
 	"fancybox":{
 		"version":"2.1.5",
 		"reference":"http://fancyapps.com",
@@ -301,15 +310,6 @@
 		"description":"(JS) json map을 이용해서 HTML 문서 안의 요소들에 사용자 속성을 지정하는 jQuery 의존성 스크립트.",
 		"js":["lib/maniprop.js/0.9/js/maniprop.js"],
 		"css":[],
-		"deps":["jquery"],
-		"priority":"-999999999"
-	},
-	"turning-sentences.js":{
-		"version":"0.9",
-		"reference":"https://github.com/jinbonetwork/jframework/tree/master/lib/turning-sentences.js",
-		"description":"(JS) 문장을 슬라이드쇼처럼 돌아가면서 보여주는 jQuery 의존성 애니메이션 스크립트.",
-		"js":["lib/turning-sentences.js/0.9/js/turning-sentences.js"],
-		"css":["lib/turning-sentences.js/0.9/css/turning-sentences.css"],
 		"deps":["jquery"],
 		"priority":"-999999999"
 	},
