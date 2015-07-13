@@ -313,6 +313,15 @@
 		"deps":["jquery"],
 		"priority":"-999999999"
 	},
+	"turning-sentences.js":{
+		"version":"0.9",
+		"reference":"https://github.com/jinbonetwork/jframework/tree/master/lib/turning-sentences.js",
+		"description":"(JS) 지정한 문장들을 번갈아 보여주는 jQuery/gsap 의존성 애니메이션 스크립트.",
+		"js":["lib/turning-sentences.js/0.9/js/turning-sentences.js"],
+		"css":["lib/turning-sentences.js/0.9/css/turning-sentences.css"],
+		"deps":["jquery","gsap"],
+		"priority":"-999999999"
+	},
 	"lazydo.js":{
 		"version":"0.9",
 		"reference":"https://github.com/jinbonetwork/jframework/tree/master/lib/lazydo.js",
