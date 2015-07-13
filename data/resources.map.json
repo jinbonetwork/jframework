@@ -304,6 +304,15 @@
 		"deps":["jquery"],
 		"priority":"-999999999"
 	},
+	"turning-sentences.js":{
+		"version":"0.9",
+		"reference":"https://github.com/jinbonetwork/jframework/tree/master/lib/turning-sentences.js",
+		"description":"(JS) 문장을 슬라이드쇼처럼 돌아가면서 보여주는 jQuery 의존성 애니메이션 스크립트.",
+		"js":["lib/turning-sentences.js/0.9/js/turning-sentences.js"],
+		"css":["lib/turning-sentences.js/0.9/css/turning-sentences.css"],
+		"deps":["jquery"],
+		"priority":"-999999999"
+	},
 	"lazydo.js":{
 		"version":"0.9",
 		"reference":"https://github.com/jinbonetwork/jframework/tree/master/lib/lazydo.js",
