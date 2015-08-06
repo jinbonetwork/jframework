@@ -65,14 +65,26 @@ form {
   padding: 0;
 }
 h1 {
-  font-family: "Noto Sans CJK KR Black", "Apple SD Gothic Neo Medium", "NanumBarunGothic", "Malgun Gothic", "Nanum Gothic", "Gulim", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Noto Sans CJK KR Black", "Apple SD Gothic Neo Medium", "NanumBarunGothic", "Malgun Gothic", "NanumGothic", "Gulim", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
 }
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: "Noto Sans CJK KR Thin", "Apple SD Gothic Neo Medium", "NanumBarunGothic", "Malgun Gothic", "Nanum Gothic", "Gulim", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Noto Sans CJK KR Thin", "Apple SD Gothic Neo Medium", "NanumBarunGothic", "Malgun Gothic", "NanumGothic", "Gulim", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+}
+h1 {
+  font-family: "Noto Sans CJK KR Black", "Apple SD Gothic Neo Medium", "NanumBarunGothic", "Malgun Gothic", "NanumGothic", "Gulim", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Noto Sans CJK KR Thin", "Apple SD Gothic Neo Medium", "NanumBarunGothic", "Malgun Gothic", "NanumGothic", "Gulim", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 input[type="number"] {
   -moz-appearance: textfield;
