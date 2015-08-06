@@ -58,7 +58,7 @@
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  "Apple SD Gothic Neo Medium", "NanumBarunGothic", "Malgun Gothic", "Nanum Gothic", "Gulim", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-sans-serif:  "Apple SD Gothic Neo Medium", "NanumBarunGothic", "Malgun Gothic", "NanumGothic", "Gulim", "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-serif:       "Apple Myeongjo", "NanumMyeongjo", "Batang", Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, "Lucida Console", Monaco, Consolas, "Courier New", Courier, monospace;
@@ -83,8 +83,8 @@
 @line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
 
 //** By default, this inherits from the `<body>`.
-@headings-font-family:    inherit;
-@headings-font-weight:    500;
+@headings-font-family:    @font-family-heading;
+@headings-font-weight:    normal;
 @headings-line-height:    1.1;
 @headings-color:          inherit;
 
