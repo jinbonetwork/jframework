@@ -28,7 +28,7 @@
 	font-style: normal;
 	src: url('./BM-JUA.eot');
 	src:
-		local('BM JUA_TTF');
+		local('BM JUA_TTF'),
 		url('./BM-JUA.eot?#iefix') format('embedded-opentype'),
 		url('./BM-JUA.woff') format('woff'),
 		url('./BM-JUA.svg#BM-JUA') format('svg'),
