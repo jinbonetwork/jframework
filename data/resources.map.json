@@ -252,7 +252,10 @@
 		"reference":"https://github.com/singihae/Webfonts",
 		"description":"(CSS) 한글 웹폰트.",
 		"js":[],
-		"css":["contrib/webfonts/2015.01.14/style.css"],
+		"css":[
+			"contrib/webfonts/2015.01.14/style.css",
+			"css/webfonts.css"
+		],
 		"deps":[],
 		"priority":"-999999999"
 	},
