@@ -373,7 +373,7 @@
 		"version":"",
 		"reference":"",
 		"description":"",
-		"js":["js/fallback.js"],
+		"js":["js/fancybox.js","js/fallback.js"],
 		"css":["css/fallback.css"],
 		"deps":["jframework-package"],
 		"priority":"-999999999"
