@@ -10,9 +10,9 @@
 				"label": "독립네트워크",
 				"href": "http://lab.jinbo.net"
 			},
-			"support": {
+			"join": {
 				"label": "후원하기",
-				"href": "http://jinbo.net/support"
+				"href": "http://jinbo.net/join"
 			}
 		}
 	},
