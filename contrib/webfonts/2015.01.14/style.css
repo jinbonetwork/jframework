@@ -46,3 +46,14 @@
 		url('./BM-HANNA.svg#BM-HANNA') format('svg'),
 		url('./BM-HANNA.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'Bukchontown';
+    font-weight: normal;
+    font-style: normal;
+	src: url('./Bukchontown.eot');
+	src: 
+		local('Bukchontown'),
+		url('./Bukchontown.eot?#iefix') format('embedded-opentype'),
+		url('./Bukchontown.woff') format('woff'),
+		url('./Bukchontown.ttf') format('truetype');
+}
